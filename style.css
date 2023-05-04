@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 52px;
+    padding: 3px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,15 +33,19 @@ header.hide {
     transform: translateY(-100%);
 }
 
-.logo img{
-    height: 150px;
-    width: auto;
-    margin: 10px;
+.logo{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10%;
+    transform: translateX(-50%);
 }
-/* .logo {
-    height: 18px;
-    width: 18px;
-} */
+
+.logo img{
+    width: 200px;
+    height: auto;
+    /* margin-right: 50px; */
+}
 .navbar a {
     position: relative;
     font-size: 18px;
