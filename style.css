@@ -36,7 +36,7 @@ header.hide {
 .logo img{
     height: 150px;
     width: auto;
-    float: left;
+    margin: 10px;
 }
 /* .logo {
     height: 18px;
