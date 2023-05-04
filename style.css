@@ -1,0 +1,93 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic bold', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('img/home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: middle center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+header.hide {
+    transform: translateY(-100%);
+}
+
+.logo img{
+    height: 150px;
+    width: auto;
+    float: left;
+}
+/* .logo {
+    height: 18px;
+    width: 18px;
+} */
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: orange;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+
+.navbar .btn-login {
+    width: 90px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    margin-left: 56px;
+    transition: -5s;
+}
+
+.navbar .btn-login:hover {
+    background-color: white;
+    color: black;
+}
+
