@@ -22,7 +22,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 3px 60px;
+    padding: 0px 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +42,7 @@ header.hide {
 }
 
 .logo img{
-    width: 200px;
+    width: 180px;
     height: auto;
     /* margin-right: 50px; */
 }
@@ -95,3 +95,12 @@ header.hide {
     color: black;
 }
 
+.home-info h1{
+    font-size: 65px;
+    font-weight: 800;
+    font-family: helvetica;
+    line-height: 70px;
+    color: #fff;
+    padding-right: 875px;
+    padding-bottom: 150px;
+}
