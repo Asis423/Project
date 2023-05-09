@@ -6,13 +6,13 @@
     font-family: 'Century Gothic bold', sans-serif;
 }
 
-body {
+.heading-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('img/home.jpg') no-repeat center center fixed;
+    background: url('img/home.jpg');
     background-size: cover;
-    background-position: middle center;
+    background-position: center;
     height: 100vh;
     width: 100vw;
 }
@@ -95,12 +95,47 @@ header.hide {
     color: black;
 }
 
-.home-info h1{
-    font-size: 65px;
+.home-info{
+    max-width: 1275px;
+    margin: auto;
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+}
+
+.home-text h1{
+    font-size: 70px;
     font-weight: 800;
     font-family: helvetica;
     line-height: 70px;
     color: #fff;
-    padding-right: 875px;
-    padding-bottom: 150px;
+}
+
+.home-text p{
+    position: relative;
+    top: 15px;
+    font-size: 20px;
+    color: rgb(175, 175, 175);
+}
+
+.home-text .btn{
+    position: relative;
+    top: 50px;
+    padding: 12px 40px;
+    background: #db8e00;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    margin-left: 125px;
+    transition: 0.5s ease;
+}
+
+.home-text .btn:hover{
+    background: #ffa000;
+    box-shadow: 0 0 5px #ffa000,
+                0 0 15px #ffa000,
+                0 0 45px #ffa000;
 }

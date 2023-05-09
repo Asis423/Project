@@ -82,6 +82,7 @@ body {
     right: 0;
     font-size: 19px;
 }
+
 .input-box input:focus ~ label,
 .input-box input:valid ~ label{
     top: 0px;
