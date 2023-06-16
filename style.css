@@ -6,6 +6,7 @@
     font-family: 'Century Gothic bold', sans-serif;
 }
 
+/* Heading section begins -----------------------------------------------------------------------------------------------*/
 .heading-section {
     display: flex;
     justify-content: center;
@@ -122,10 +123,10 @@ header.hide {
 .home-text .btn{
     position: relative;
     top: 50px;
-    padding: 12px 40px;
+    padding: 12px 32px;
     background: #db8e00;
     outline: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 20px;
     color: white;
@@ -140,11 +141,70 @@ header.hide {
                 0 0 45px #ffa000;
 }
 
-.bike-container{
+/* Heading Section Ends -----------------------------------------------------------------------------------------------*/
+
+/* Gallery Section Begins -----------------------------------------------------------------------------------------------*/
+
+/* .gallery{
+    height: 100vh;
+} */
+
+.gallery h1 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+/* .clip_path{
+        padding: 30px 0 65px 0;
+        background-color: #333;
+        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 6rem), 0% 100%);
+} */
+
+.container{
     display: flex;
+    justify-content: center;
+    background: #a8a8a8;
+    position: center;
+    /* width: 100vw; */
+    align-items: center;
     flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 20px;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.container .bikes{
+    width: 308px;
+    position: relative;
+    height: 400px;
+    background: #f0f0f0;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5px 10px #e6e6e6;
+    transition: 0.5s ease-in-out;
+    margin-top: 5%;
+}
+
+ .container .bikes .image{
+    position: relative;
+    width: 260px;
+    height: auto;
+    top: -60px;
+    left: 13px;
+    box-shadow: 0 5px 20px rbga(0,0,0,1.2);
+}
+
+.container .bikes .image .img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.image:hover img{
+    transform: scale(1.1);
 }
 
 /* contact section begins -----------------------------------------------------------------------------------------------*/
