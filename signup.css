@@ -8,7 +8,7 @@
 }
 
 body {
-    background: url(/img/login.jpg);
+    background: url(img/signup.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -16,21 +16,21 @@ body {
 .signup-section {
     border: 2px solid whitesmoke;
     height: auto;
-    max-width: 400px;
-    width: 80%;
+    /* max-width: 400px; */
+    width: 27.5%;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    transition: .3s;
-    padding: 30px;
+    transition: 0.3s;
+    padding: 37.5px;
     box-sizing: border-box;
 }
 
 .signup-section:hover {
-    box-shadow: 0 0 30px whitesmoke;
+    box-shadow: 0 0 37.5px whitesmoke;
 }
 
 .signup-section .form-box {
@@ -39,15 +39,15 @@ body {
 
 .form-box h2 {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 37.5px;
+    margin-bottom: 30px;
 }
 
 .form-box .input-box {
     width: 100%;
-    height: 40px;
+    height: 42px;
     border-bottom: 2px solid #fff;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
 }
 
@@ -57,8 +57,8 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 16px;
-    padding-right: 24px;
+    font-size: 18.4px;
+    padding-right: 28.8px;
     color: #fff;
 }
 
@@ -67,43 +67,43 @@ body {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 18.4px;
     font-weight: 500;
     color: #fff;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
 .input-box .icon {
     position: absolute;
-    top: 11px;
+    top: 13.2px;
     right: 0;
-    font-size: 18px;
+    font-size: 19.8px;
 }
 
 .input-box input:focus ~ label,
 .input-box input:valid ~ label {
-    top: 0px;
-    font-size: 16px;
+    top: 0;
+    font-size: 18.4px;
 }
 
 .btn {
     background-color: #fff;
     width: 100%;
-    height: 40px;
+    height: 42px;
     outline: none;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18.4px;
     color: #fff;
     background: #ff0000;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 .create-account {
-    font-size: 14.5px;
+    font-size: 15.225px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .create-account p a {
@@ -124,12 +124,12 @@ body {
 }
 
 .input-box-container .input-box {
-    width: calc(50% - 10px);
+    width: calc(52.5% - 10.5px);
     margin-bottom: 0;
 }
 
 .input-box-container .input-box:first-child {
-    margin-right: 10px;
+    margin-right: 10.5px;
 }
 
 .input-box-container .icon {

@@ -19,7 +19,7 @@
         <a href="#">Gallery</a>
         <a href="#">Services</a>
         <a href="#">Contact Us</a>
-        <button class="btn-login">Login</button>
+        <button class="btn-login"><a href="login.php">Login</a></button>
       </nav>
     </header>
     <div class="home-info" id="home-info">
@@ -42,7 +42,7 @@
       <div class="bikes">
           <div class="image">
               <a href="">
-                  <img src="/img/bike1.jpg" alt="Bike">
+                  <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
@@ -54,7 +54,7 @@
       <div class="bikes">
           <div class="image">
               <a href="">
-                  <img src="/img/bike1.jpg" alt="Bike">
+                  <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
@@ -66,7 +66,7 @@
       <div class="bikes">
           <div class="image">
               <a href="">
-                  <img src="/img/bike1.jpg" alt="Bike">
+                  <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
@@ -120,7 +120,7 @@
     <!-- footer section starts ---------------------------------------------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer_containerleft">
-      <img src="/img/logo.png" alt="Logo" class="img" />
+      <img src="img/logo.png" alt="Logo" class="img" />
     </div>
     <div class="footer_containerright">
       <div class="row">

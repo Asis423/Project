@@ -8,7 +8,7 @@
     <!-- This is login page  -->
     <div class="login-section">
         <div class="form-box">
-            <form action="" method="post">
+            <form action="connection/login.php" method="POST">
                 <h2>Login</h2>
                 <div class="input-box">
                     <span class="icon">

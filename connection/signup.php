@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$email', '$password', '$username', '$mobileNumber')";
 
     if ($conn->query($sql) === true) {
-        // Redirect to user.html when signup is successful
-        header("Location: ../user.html");
+        // Redirect to user.php when signup is successful
+        header("Location: ../user.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

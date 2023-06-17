@@ -33,33 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // User is authenticated
             $_SESSION["email"] = $email; // Store user email in session variable
 
-            // Fetch additional user information from the database
-            $sql = "SELECT name, age FROM users WHERE email = '$email'";
-            $userInfo = $conn->query($sql)->fetch_assoc();
-
-            if ($userInfo) {
-                $name = $userInfo["name"];
-                $age = $userInfo["age"];
-
-                // Display the fetched information
-                echo "Login successful!<br>";
-                echo "Name: " . $name . "<br>";
-                echo "Age: " . $age . "<br>";
-            } else {
-                echo "Failed to fetch user information";
-            }
-
             // Redirect to the dashboard page
-            // header("Location: dashboard.php");
-            exit;
+            header("Location: ../user.php");
         } else {
-            // Invalid credentials
-            echo "Invalid email or password";
-        }
-    } else {
-        // Display validation errors
-        foreach ($errors as $error) {
-            echo $error . "<br>";
+            // Display validation errors
+            foreach ($errors as $error) {
+                echo $error . "<br>";
+            }
         }
     }
 }
