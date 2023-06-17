@@ -6,6 +6,14 @@
     font-family: 'Century Gothic bold', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    scroll-padding-top: 60px;
+}
+
 /* Heading section begins -----------------------------------------------------------------------------------------------*/
 .heading-section {
     display: flex;
@@ -23,7 +31,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0px 55px;
+    padding: 10px 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,19 +116,19 @@ header.hide {
 }
 
 .home-info{
-    max-width: 1275px;
+    max-width: 1550px;
     margin: auto;
     width: 100%;
-    min-height: 640px;
+    min-height: 800px;
     display: flex;
     align-items: center;
 }
 
-.home-text h1{
-    font-size: 70px;
+.home-text h1 {
+    font-size: 80px;
     font-weight: 800;
     font-family: helvetica;
-    line-height: 70px;
+    line-height: 90px;
     color: #fff;
 }
 
@@ -143,6 +151,7 @@ header.hide {
     color: white;
     margin-left: 125px;
     transition: 0.5s ease;
+    text-decoration: none;
 }
 
 .home-text .btn:hover{
@@ -156,10 +165,6 @@ header.hide {
 
 /* Gallery Section Begins -----------------------------------------------------------------------------------------------*/
 
-/* .gallery{
-    height: 100vh;
-} */
-
 .gallery h1 {
     color: #ffffff;
     font-size: 40px;
@@ -168,13 +173,26 @@ header.hide {
     padding-bottom: 5px;
 }
 
-/* .clip_path{
-        padding: 30px 0 65px 0;
-        background-color: #333;
-        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 6rem), 0% 100%);
-} */
+.clip_path {
+    padding: 30px 0 35px 0; /* Decrease the bottom padding */
+    background-color: #333;
+    position: relative;
+}
+  
+.clip_path::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%; /* Increase the height for a stronger blur effect */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #333); /* Adjust the opacity as needed */
+    filter: blur(25px); /* Increase the blur intensity as needed */
+    pointer-events: none;
+}
 
-.container{
+/* Top 3 Bikes ---------------------------------- */
+.container-top{
     display: flex;
     justify-content: center;
     background: #a8a8a8;
@@ -186,63 +204,143 @@ header.hide {
     margin-top: 10px;
 }
 
-.container .bikes{
-    width: 308px;
+.container-top .bikes{
+    width: 325px;
     position: relative;
     height: 400px;
     background: #f0f0f0;
-    margin: 30px 10px;
-    padding: 20px 15px;
+    margin: 30px 50px;
+    padding: 0px 25px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0.5px 10px #e6e6e6;
+    box-shadow: 5px 5px #a8a8a8;
     transition: 0.5s ease-in-out;
     margin-top: 5%;
 }
 
- .container .bikes .image{
+ .container-top .bikes .image{
     position: relative;
     width: 260px;
     height: auto;
-    top: -60px;
+    top: -50px;
     left: 13px;
     box-shadow: 0 5px 20px rbga(0,0,0,1.2);
 }
 
-.container .bikes .image .img {
+.container-top .bikes .image .img {
     max-width: 100%;
     border-radius: 10px;
+}
+
+.container-top .bikes .image h2 {
+    margin-top: 20px; /* Add margin to create space between image and name */
+    margin-bottom: 5px; /* Add margin to create space between name and other texts */
+}
+
+.container-top .bikes .image p {
+    margin-bottom: 5px; /* Add margin to create space between paragraphs */
 }
 
 .image:hover img{
     transform: scale(1.1);
 }
 
-/* contact section begins -----------------------------------------------------------------------------------------------*/
- 
-.contact{
-    height: 100vh;
+.container-top .bikes .image .enquiry-btn{
+    position: relative;
+    padding: 10px 32px;
+    background: #db8e00;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: 0.5s ease;
+    text-decoration: none;
+    box-decoration-break: none;
 }
-.contact_section{
+
+.container-top .bikes .image .enquiry-btn:hover{
+    background: #ffa000;
+    box-shadow: 0 0 5px #ffa000, 0 0 10px #ffa000, 0 0 15px #ffa000;
+    border: none;
+}
+
+/* Bottom 3 Bikes ---------------------------------- */
+.container-bottom{
     display: flex;
+    justify-content: center;
+    background: #a8a8a8;
+    position: center;
+    /* width: 100vw; */
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    /* margin-top: 10px; */
 }
-/* .clip_path{
-        padding: 30px 0 65px 0;
-        background-color: #333;
-        clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 6rem), 0% 100%);
-} */
 
-.row1 {
-    
-    text-align: center;
-    justify-content: center;
-    width: 50%;
-    border-radius: 20px;
-    padding: 20px 0;
-
+.container-bottom .bikes{
+    width: 325px;
+    position: relative;
+    height: 400px;
+    background: #f0f0f0;
+    margin: 30px 50px;
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px #a8a8a8;
+    transition: 0.5s ease-in-out;
+    margin-top: 5%;
 }
+
+.container-bottom .bikes .image{
+    position: relative;
+    width: 260px;
+    height: auto;
+    top: -50px;
+    left: 13px;
+    box-shadow: 0 5px 20px rbga(0,0,0,1.2);
+}
+
+.container-bottom .bikes .image .img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.container-bottom .bikes .image h2 {
+    margin-top: 20px; /* Add margin to create space between image and name */
+    margin-bottom: 5px; /* Add margin to create space between name and other texts */
+}
+
+.container-bottom .bikes .image p {
+    margin-bottom: 5px; /* Add margin to create space between paragraphs */
+}
+
+.image:hover img{
+    transform: scale(1.1);
+}
+
+.container-bottom .bikes .image .enquiry-btn{
+    position: relative;
+    padding: 10px 32px;
+    background: #db8e00;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: 0.5s ease;
+    text-decoration: none;
+    box-decoration-break: none;
+}
+
+.container-bottom .bikes .image .enquiry-btn:hover{
+    background: #ffa000;
+    box-shadow: 0 0 5px #ffa000, 0 0 10px #ffa000, 0 0 15px #ffa000;
+    border: none;
+}
+
+/* Gallery Section Ends -----------------------------------------------------------------------------------------------*/
+
+/* Contact section begins -----------------------------------------------------------------------------------------------*/
+ 
 .contact h1 {
     color: #ffffff;
     font-size: 40px;
@@ -250,6 +348,50 @@ header.hide {
     font-weight: 600;
     padding-bottom: 5px;
 }
+  
+.clip_path_contact {
+    padding: 30px 0 35px 0; /* Decrease the bottom padding */
+    background-color: #333;
+    position: relative;
+}
+  
+.clip_path_contact::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position the rectangle at the bottom */
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust the height of the white rectangle */
+    background-color: #ffffff; /* Set the color of the rectangle */
+}
+  
+.clip_path_contact::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%; /* Increase the height for a stronger blur effect */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #333); /* Adjust the opacity as needed */
+    filter: blur(25px); /* Increase the blur intensity as needed */
+    pointer-events: none;
+}
+  
+.contact_section{
+    display: flex;
+    background: #a8a8a8;
+    align-items: center;
+    justify-content: center;
+}
+
+.row1 {
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
 .contact form {
     display: flex;
     flex-direction: column;
@@ -278,12 +420,10 @@ header.hide {
     }
     50% {
         translate: -6px 0;
-    }
-         
+    }         
     75% {
         translate: 6px 0;
-    }
-                
+    }                
 }
 
 .row1 textarea{
@@ -316,10 +456,10 @@ header.hide {
 }
 .row1 form p{
     font-size: 27px;
-        color: #333;
-        text-transform: capitalize;
-        margin-bottom: 35px;
-        font-weight: 700;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 700;
 }
 
 .contact-col {
@@ -327,7 +467,7 @@ header.hide {
     padding: 0 15px;
     height: 345px;
     border-radius: 10px;
-    background-color: #d5d1d1;
+    background-color: #f0f0f0;
 }
 
 .contact-col h4 {
@@ -388,22 +528,22 @@ header.hide {
 }
 
 .footer .img{
-    width: 250px;
+    width: 300px;
     height: auto;
-    margin-left: 35px;
+    margin-left: 100px;
 }
 
 .footer_containerleft{
 display: flex;
     justify-content: center;
     align-items: center;
-    width: 245px;
+    width: 300px;
 }
 
 .footer_containerright{
     display: flex;
     flex-direction: column;
-    width: 1170px;
+    width: 1350px;
     margin: auto;
     border-left: 1px solid #ffffff;
 }
@@ -436,7 +576,7 @@ padding: 0 15px;
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #e91e63;
+    background-color: rgb(255, 150, 0);
     height: 2px;
     box-sizing: border-box;
     width: 50px;
@@ -481,8 +621,7 @@ padding: 0 15px;
 
 .footer-col .register_style a{
     font-size: 20px;
-    color: #F85151;
-
+    color: rgb(255, 150, 0);
 }
 
 .copyright1 {

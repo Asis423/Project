@@ -5,21 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike Showroom Booking System</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="heading-section">
+  <div class="heading-section" id="home">
   <!-- Header starts ------------------------------------------------------------------------------- -->
     <header>
       <div class="logo"><img src="img/logo.png" alt="logo"></div>
       <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Gallery</a>
-        <a href="#">Services</a>
-        <a href="#">Contact Us</a>
-        <button class="btn-login"><a href="login.php">Login</a></button>
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+        <button class="btn-login"><a href="login_page.php">Login</a></button>
       </nav>
     </header>
     <div class="home-info" id="home-info">
@@ -27,7 +27,7 @@
         <h1>LET'S HAVE<br>A RIDE</h1>
         <p>Providing the Quality and Luxurious Lifestyle.</p>
         <!-- Home button -->
-        <a href="" class="btn">Book Now</a>
+        <a href="signup_page.php" class="btn">Book Now</a>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
       <section class="clip_path">
         <h1>Gallery</h1>
       </section>
-    <section class="container">
+    <section class="container-top">
       <div class="bikes">
           <div class="image">
               <a href="">
@@ -47,7 +47,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="btn-booking">Book Now</button>
+              <button class="enquiry-btn">Enquiry</button>
           </div>
       </div>
   
@@ -59,7 +59,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="btn-booking">Book Now</button>
+              <button class="enquiry-btn">Enquiry</button>
           </div>
       </div>
   
@@ -71,15 +71,56 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="btn-booking">Book Now</button>
+              <button class="enquiry-btn">Enquiry</button>
           </div>
       </div>
+    </section>
+
+    <section class="container-bottom">
+      <div class="bikes">
+          <div class="image">
+              <a href="">
+                  <img src="img/bike1.jpg" alt="Bike">
+              </a>
+              <h2>Royal Enfield Classic 350</h2>
+              <p>#Premium Black #Luxury</p>
+              <p>Rs. 5,50,000/-</p>
+              <button class="enquiry-btn">Enquiry</button>
+          </div>
+      </div>
+  
+      <div class="bikes">
+          <div class="image">
+              <a href="">
+                  <img src="img/bike1.jpg" alt="Bike">
+              </a>
+              <h2>Royal Enfield Classic 350</h2>
+              <p>#Premium Black #Luxury</p>
+              <p>Rs. 5,50,000/-</p>
+              <button class="enquiry-btn">Enquiry</button>
+          </div>
+      </div>
+  
+      <div class="bikes">
+          <div class="image">
+              <a href="">
+                  <img src="img/bike1.jpg" alt="Bike">
+              </a>
+              <h2>Royal Enfield Classic 350</h2>
+              <p>#Premium Black #Luxury</p>
+              <p>Rs. 5,50,000/-</p>
+              <button class="enquiry-btn">Enquiry</button>
+          </div>
+      </div>
+    </section>
   </section>
 
-      <!-- Contact section starts here ---------------------------------------------------------------------------------------------->
+  <!-- Gallery section Ends Here ------------------------------------------------------------------------------- -->
+
+  <!-- Contact section starts here ---------------------------------------------------------------------------------------------->
 
   <section class="contact" id="contact">
-    <section class="clip_path">
+    <section class="clip_path_contact">
       <h1>Contact Us</h1>
     </section>
     <div class="contact_section"> <!-- contact section begins -->
@@ -97,23 +138,23 @@
         <ul>
           <li>
             <span class="material-symbols-outlined"> location_on </span>
-            <p>Alka hospital, Lalitpur 44600</p>
+            <p>Chandragiri Hills, Kathmandu 44619</p>
           </li>
         </ul>
         <ul>
           <li>
             <span class="material-symbols-outlined"> Phone_In_Talk </span>
-            <p>+977-01-5912727, 4538566</p>
+            <p>+977-9863727423, 9808375464</p>
           </li>
         </ul>
         <ul>
           <li>
             <span class="material-symbols-outlined"> mail </span>
-            <p>info@achsnepal.edu.np</p>
+            <p>info@shelby.edu.np</p>
           </li>
         </ul>
       </div>
-    </div> <!-- contact_section ends -->
+    </div>
   </section>
   <!-- Contact section ends here ----------------------------------------------------------------------------------------------->
 
@@ -129,6 +170,9 @@
           <ul>
             <li>
               <a href="#aboutus"> About Us</a>
+            </li>
+            <li>
+              <a href="#contactus"> Contact Us</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
