@@ -13,7 +13,7 @@ body {
     background-size: cover;
 }
 
-.login-section {
+.signup-section {
     border: 2px solid whitesmoke;
     height: auto;
     max-width: 400px;
@@ -29,11 +29,11 @@ body {
     box-sizing: border-box;
 }
 
-.login-section:hover {
+.signup-section:hover {
     box-shadow: 0 0 30px whitesmoke;
 }
 
-.login-section .form-box {
+.signup-section .form-box {
     position: relative;
 }
 

@@ -1,5 +1,7 @@
 <?php
 
+session_start(); // Start the session
+
 require_once "connection.php";
 
 // Login form submission
@@ -29,9 +31,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             // User is authenticated
-            echo "Login successful";
-            // Redirect to the desired page
+            $_SESSION["email"] = $email; // Store user email in session variable
+
+            // Fetch additional user information from the database
+            $sql = "SELECT name, age FROM users WHERE email = '$email'";
+            $userInfo = $conn->query($sql)->fetch_assoc();
+
+            if ($userInfo) {
+                $name = $userInfo["name"];
+                $age = $userInfo["age"];
+
+                // Display the fetched information
+                echo "Login successful!<br>";
+                echo "Name: " . $name . "<br>";
+                echo "Age: " . $age . "<br>";
+            } else {
+                echo "Failed to fetch user information";
+            }
+
+            // Redirect to the dashboard page
             // header("Location: dashboard.php");
+            exit;
         } else {
             // Invalid credentials
             echo "Invalid email or password";

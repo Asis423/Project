@@ -1,5 +1,4 @@
 <?php
-
 require_once "connection.php";
 
 // Process the signup form data
@@ -42,12 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$email', '$password', '$username', '$mobileNumber')";
 
     if ($conn->query($sql) === true) {
-        echo "Signup successful!";
+        // Redirect to user.html when signup is successful
+        header("Location: ../user.html");
+        exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-
 
 // Close the database connection
 $conn->close();

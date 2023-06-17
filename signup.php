@@ -1,15 +1,15 @@
 <html>
 <head>
     <title>Sign Up Form</title>
-    <link rel="stylesheet" href="/connection/signup.php">
+    <link rel="stylesheet" href="signup.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <form action="signup.php" method="POST">
+    <form action="/connection/signup.php" method="POST">
     <!-- Form fields and content -->
   
         <!-- This is Sign Up page  -->
-        <div class="login-section">
+        <div class="signup-section">
             <div class="form-box">
                 <form action="" method="">
                     <h2>Sign Up</h2>
@@ -31,7 +31,7 @@
                         <span class="icon">
                             <i class='bx bxs-envelope'></i>
                         </span>
-                        <input type="number" name="number" required>
+                        <input type="tel" name="number" required>
                         <label for="">Mobile No.</label>
                     </div>
                     <div class="input-box">
