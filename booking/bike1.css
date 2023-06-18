@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Century Gothic bold', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../img/interceptor-650.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+display: flex;
+align-items: center;
+position: absolute;
+top: 10px;
+right: 20px;
+}
+
+.logo img{
+width: 250px;
+height: auto;
+}
+
+h1 {
+font-size: 35px;
+text-transform: capitalize;
+color: #fff;
+text-decoration: none;
+display: block;
+transition: all 0.3s ease;
+text-align: center;
+position: absolute;
+top: 8%;
+left: 50%;
+transform: translateX(-50%);
+padding: 10px;
+}
+
+h1:hover{
+color: #ffbe5c;
+padding-left: 7px;
+}
+
+.container {
+  position: absolute;
+  top: 160px;
+  right: 350px;
+}
+
+.specs {
+  width: 50%;
+  padding: 0px;
+  top: 5%;
+  right: 15%;
+  margin-right: 10%;
+}
+
+h2 {
+  position: relative;
+  background-color: orange;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.specs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs th,
+.specs td {
+  padding: 11px 60px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap; /* Add this line to keep the content in one row */
+}
+
+.specs th {
+  color: rgb(255, 210, 0);
+  font-style: bold;
+}
+
+.specs td {
+  color: #fff;
+  font-weight: 550;
+  font-size: medium;
+}
+
+.price {
+  text-align: left;
+  margin-top: 30px;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.price span {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.book-btn {
+  text-align: center;
+  margin-top: 600px;
+  margin-left: 225px;
+  text-decoration: none;
+}
+
+.book-btn a {
+  position: relative;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-style: bold;
+  background-color: #db8e00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.5s ease;
+  text-decoration: none;
+}
+
+.book-btn a:hover {
+  background: #ffa000;
+  box-shadow: 0 0 5px #ffa000,
+              0 0 10px #ffa000;
+}
+

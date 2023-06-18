@@ -17,7 +17,7 @@
       <nav class="navbar">
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
-        <a href="#about">About Us</a>
+        <a href="#aboutus">About Us</a>
         <a href="#contact">Contact Us</a>
         <button class="btn-login"><a href="login_page.php">Login</a></button>
       </nav>
@@ -41,37 +41,37 @@
     <section class="container-top">
       <div class="bikes">
           <div class="image">
-              <a href="booking/bike_booking.php">
+              <a href="booking/bike1.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
-              <h2>Royal Enfield Classic 350</h2>
+              <h2>Royal Enfield Interceptor 650</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike1.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
       <div class="bikes">
           <div class="image">
-              <a href="">
-                  <img src="img/bike1.jpg" alt="Bike">
+              <a href="booking/bike2.php">
+                  <img src="img/bike2.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike2.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
       <div class="bikes">
           <div class="image">
-              <a href="">
+              <a href="booking/bike1.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike3.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
     </section>
@@ -79,37 +79,37 @@
     <section class="container-bottom">
       <div class="bikes">
           <div class="image">
-              <a href="">
+              <a href="booking/bike1.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike4.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
       <div class="bikes">
           <div class="image">
-              <a href="">
+              <a href="booking/bike1.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike5.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
       <div class="bikes">
           <div class="image">
-              <a href="">
+              <a href="booking/bike1.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/bike1.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
     </section>
@@ -117,6 +117,45 @@
 
   <!-- Gallery section Ends Here ------------------------------------------------------------------------------- -->
 
+  <!-- About Us Starts ------------------------------------------------------------------------------- -->
+  
+  <section class="aboutus" id="aboutus">
+    <section class="clip_path_aboutus">
+      <h1>About Us</h1>
+    </section>
+    <div class="container-about">
+    <p>Welcome to Shelby Showroom, Nepal's First Automobile Search Venture, that helps you book royal 
+      bikes online in the easiest way possible.</p>
+      <section class="about_section">
+        <div class="about-image">
+          <img src="img/about-us.jpg" alt="bike">
+        </div>
+        <div class="about-content">
+          <h2>Explore new horizons on two wheels</h2>
+          <p>Welcome to Shelby Showroom, your premier destination for luxury bike bookings. Our showroom is 
+            dedicated to providing you with an exceptional experience that combines the thrill of riding with 
+            the elegance of luxury bikes.<br><br>
+            At Shelby Showroom, we showcase a meticulously curated collection of top-tier bikes that embody 
+            the perfect blend of style, performance, and craftsmanship. Each bike in our showroom is 
+            handpicked to ensure that it meets our stringent standards of excellence.<br><br>
+            When you choose Shelby Showroom for your bike booking, you can expect personalized attention and a 
+            seamless process from start to finish. Our knowledgeable team is passionate about bikes and will 
+            assist you in finding the perfect match for your riding preferences and aspirations.<br><br>
+            We understand that owning a luxury bike is more than just a possession – it's a statement of 
+            individuality and a gateway to unforgettable adventures. With our bike booking service, you have 
+            the opportunity to embrace the road with confidence, knowing that you're riding a machine that 
+            represents the pinnacle of engineering and design.<br><br>
+            Indulge in the extraordinary and embark on a journey of elegance and excitement with Shelby 
+            Showroom. Book your dream bike today and discover a world where luxury and performance converge, 
+            setting the stage for unforgettable moments on the open road.
+            
+</p>
+        </div>
+      </section>
+    </div>
+  </section> 
+  <!-- About Us Ends ------------------------------------------------------------------------------- -->
+  
   <!-- Contact section starts here ---------------------------------------------------------------------------------------------->
 
   <section class="contact" id="contact">
@@ -172,7 +211,7 @@
               <a href="#aboutus"> About Us</a>
             </li>
             <li>
-              <a href="#contactus"> Contact Us</a>
+              <a href="#contact"> Contact Us</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
@@ -180,8 +219,8 @@
           <h4> Contact Us </h4>
           <ul>
             <li class="register_style">
-              <p>Are you an alumni? Do you want to</p>
-              <a href="#"> register ?</a>
+              <p>Do you want to book a bike?</p>
+              <a href="signup_page.php">  Register ?</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
