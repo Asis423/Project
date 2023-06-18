@@ -41,13 +41,13 @@
     <section class="container-top">
       <div class="bikes">
           <div class="image">
-              <a href="">
+              <a href="booking/bike_booking.php">
                   <img src="img/bike1.jpg" alt="Bike">
               </a>
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
@@ -59,7 +59,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
@@ -71,7 +71,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
     </section>
@@ -85,7 +85,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
@@ -97,7 +97,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
   
@@ -109,7 +109,7 @@
               <h2>Royal Enfield Classic 350</h2>
               <p>#Premium Black #Luxury</p>
               <p>Rs. 5,50,000/-</p>
-              <button class="enquiry-btn">Enquiry</button>
+              <a href="booking/bike_booking.php" class="enquiry-btn">Enquiry</a>
           </div>
       </div>
     </section>

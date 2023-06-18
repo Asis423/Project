@@ -246,8 +246,9 @@ header.hide {
 }
 
 .container-top .bikes .image .enquiry-btn{
+    display: inline-block;
     position: relative;
-    padding: 10px 32px;
+    padding: 10px 35px;
     background: #db8e00;
     outline: none;
     cursor: pointer;
@@ -255,7 +256,7 @@ header.hide {
     color: white;
     transition: 0.5s ease;
     text-decoration: none;
-    box-decoration-break: none;
+    margin-top: 2px;
 }
 
 .container-top .bikes .image .enquiry-btn:hover{
@@ -319,8 +320,9 @@ header.hide {
 }
 
 .container-bottom .bikes .image .enquiry-btn{
+    display: inline-block;
     position: relative;
-    padding: 10px 32px;
+    padding: 10px 35px;
     background: #db8e00;
     outline: none;
     cursor: pointer;
@@ -328,7 +330,6 @@ header.hide {
     color: white;
     transition: 0.5s ease;
     text-decoration: none;
-    box-decoration-break: none;
 }
 
 .container-bottom .bikes .image .enquiry-btn:hover{
