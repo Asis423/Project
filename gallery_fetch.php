@@ -15,7 +15,7 @@ if ($result && $result->num_rows > 0) {
         $data[] = $bike;
     }
 } else {
-    echo '<p>No bike data available</p>';
+    $data[] = "No bike data available";
 }
 
 // Close the database connection
@@ -24,4 +24,3 @@ $conn->close();
 // Return the bike data as JSON
 header('Content-Type: application/json');
 echo json_encode($data);
-?>
