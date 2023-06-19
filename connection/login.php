@@ -1,5 +1,4 @@
 <?php
-
 session_start(); // Start the session
 
 require_once "connection.php";
@@ -8,6 +7,7 @@ require_once "connection.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $role = $_POST["role"];
 
     // Validate email and password
     $errors = [];
@@ -23,23 +23,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (strlen($password) < 8) {
         $errors[] = "Password should be at least 8 characters long";
     }
+    if (!preg_match("/[a-z]/i", $_POST["password"])) {
+        echo '<script>alert("Password must contain at least one letter");</script>';
+        die();
+    }
+    if (!preg_match("/[0-9]/", $_POST["password"])) {
+        echo '<script>alert("Password must contain at least one number");</script>';
+        die();
+    }
 
     if (empty($errors)) {
         // Perform login process
-        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-        $result = $conn->query($sql);
+        if ($role == "admin") {
+            $sql = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
+            $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            // User is authenticated
-            $_SESSION["email"] = $email; // Store user email in session variable
+            if ($result->num_rows > 0) {
+                // Admin is authenticated
+                $_SESSION["email"] = $email; // Store admin email in session variable
 
-            // Redirect to the dashboard page
-            header("Location: ../user.php");
-        } else {
-            // Display validation errors
-            foreach ($errors as $error) {
-                echo $error . "<br>";
+                // Redirect to the admin dashboard page
+                header("Location: ../admin/admin_dash.php");
+            } else {
+                $errors[] = "Invalid admin credentials";
             }
+        } elseif ($role == "user") {
+            $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                // User is authenticated
+                $_SESSION["email"] = $email; // Store user email in session variable
+
+                // Redirect to the user dashboard page
+                header("Location: ../users/user_index.php");
+            } else {
+                $errors[] = "Invalid user credentials";
+            }
+        }
+    }
+
+    if (!empty($errors)) {
+        // Display validation errors
+        foreach ($errors as $error) {
+            echo $error . "<br>";
         }
     }
 }

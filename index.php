@@ -1,3 +1,9 @@
+<?php
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,89 +37,47 @@
       </div>
     </div>
   </div>
-    <!-- Header Ends ------------------------------------------------------------------------------- -->        
+  <!-- Header Ends ------------------------------------------------------------------------------- -->        
     
-    <!-- Gallery Starts ------------------------------------------------------------------------------- -->
-    <section class="gallery" id="gallery">
-      <section class="clip_path">
-        <h1>Gallery</h1>
-      </section>
-    <section class="container-top">
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike1.php">
-                  <img src="img/bike1.jpg" alt="Bike">
-              </a>
-              <h2>Royal Enfield Interceptor 650</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike1.php" class="enquiry-btn">Enquiry</a>
-          </div>
-      </div>
-  
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike2.php">
-                  <img src="img/bike2.jpg" alt="Bike">
-              </a>
-              <h2>Royal Enfield Classic 350</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike2.php" class="enquiry-btn">Enquiry</a>
-          </div>
-      </div>
-  
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike1.php">
-                  <img src="img/bike1.jpg" alt="Bike">
-              </a>
-              <h2>Royal Enfield Classic 350</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike3.php" class="enquiry-btn">Enquiry</a>
-          </div>
-      </div>
-    </section>
+  <!-- Gallery Starts ------------------------------------------------------------------------------- -->
 
-    <section class="container-bottom">
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike1.php">
-                  <img src="img/bike1.jpg" alt="Bike">
+  <!-- Gallery section Starts -->
+  <section class="gallery" id="gallery">
+    <section class="clip_path">
+      <h1>Gallery</h1>
+    </section>
+    <section class="container-top">
+      <?php
+      // Make an AJAX request to fetch bike data from the database
+      $bikeData = json_decode(file_get_contents('gallery_fetch.php'), true);
+      
+      // Check if bike data is available
+      // var_dump($bikeData);
+      if (!empty($bikeData)) {
+        foreach ($bikeData as $bike) {
+          $bikeImg = $bike['bike_image_url'];
+          $bikeName = $bike['bike_name'];
+          $bikePrice = $bike['bike_price'];
+      ?>
+          <div class="bikes">
+            <div class="image">
+              <a href="booking/<?php echo $bikeName; ?>.php">
+                <img src="img/<?php echo $bikeImg; ?>" alt="Bike">
               </a>
-              <h2>Royal Enfield Classic 350</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike4.php" class="enquiry-btn">Enquiry</a>
+              <h2><?php echo $bikeName; ?></h2>
+              <p><?php echo $bikePrice; ?></p>
+              <a href="booking/<?php echo $bikeName; ?>.php" class="enquiry-btn">Enquiry</a>
+            </div>
           </div>
-      </div>
-  
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike1.php">
-                  <img src="img/bike1.jpg" alt="Bike">
-              </a>
-              <h2>Royal Enfield Classic 350</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike5.php" class="enquiry-btn">Enquiry</a>
-          </div>
-      </div>
-  
-      <div class="bikes">
-          <div class="image">
-              <a href="booking/bike1.php">
-                  <img src="img/bike1.jpg" alt="Bike">
-              </a>
-              <h2>Royal Enfield Classic 350</h2>
-              <p>#Premium Black #Luxury</p>
-              <p>Rs. 5,50,000/-</p>
-              <a href="booking/bike1.php" class="enquiry-btn">Enquiry</a>
-          </div>
-      </div>
+      <?php
+        }
+      } else {
+        echo '<p>No bike data available</p>';
+      }
+      ?>
     </section>
   </section>
+  <!-- Gallery section Ends -->
 
   <!-- Gallery section Ends Here ------------------------------------------------------------------------------- -->
 

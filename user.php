@@ -10,3 +10,10 @@
   <h1>Signup Successful</h1>
 </body>
 </html>
+<?php
+
+header('location:userdash/dash.php');
+
+
+?>
+<?php

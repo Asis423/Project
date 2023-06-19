@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === true) {
         // Redirect to user.php when signup is successful
-        header("Location: ../user.php");
+        header("Location: ../users/user_index.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

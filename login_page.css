@@ -9,21 +9,23 @@
 
 body {
     background: url(img/login.jpg);
-    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     background-size: cover;
+    height: 100vh;
 }
 
 .login-section {
-    border: 2.2px solid whitesmoke; /* Increase the border thickness by 10% */
-    height: 539px; /* Increase the height by 10% */
-    width: 440px; /* Increase the width by 10% */
+    border: 2px solid whitesmoke; /* Increase the border thickness by 10% */
+    height: 535px; /* Increase the height by 10% */
+    width: 445px; /* Increase the width by 10% */
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     backdrop-filter: blur(11px); /* Increase the blur value by 10% */
-    border-radius: 11px; /* Increase the border radius by 10% */
-    transition: .3s;
+    border-radius: 9px; /* Increase the border radius by 10% */
+    transition: 0.3s;
 }
 
 .login-section:hover{
@@ -87,22 +89,51 @@ body {
     font-size: 17.6px; /* Increase the font size by 10% */
 }
 
-.remember-password{
-    font-size: 16.1px; /* Increase the font size by 10% */
-    font-weight: 500;
-    margin: -16.5px 0 16.5px; /* Increase the margin by 10% */
+.role-selection {
+    margin-top: 20px; /* Increase the distance between role selection and other elements */
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
-.remember-password label input{
+.role-selection label {
+    margin-right: 10px; /* Increase the distance between label and dropdown */
+    font-size: 17.6px; /* Increase the font size by 10% */
+    color: #fff;
+}
+
+.role-selection select {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 17.6px; /* Increase the font size by 10% */
+    color: #fff;
+}
+
+.remember-password {
+    font-size: 16.1px; /* Increase the font size by 10% */
+    font-weight: 500;
+    margin: 28px 0px 16px; /* Increase the distance between remember password and other elements */
+    display: flex;
+    align-items: center;
+}
+
+.remember-password label input {
     accent-color: #ff0000;
     margin-right: 3.3px; /* Increase the margin by 10% */
 }
 
-.remember-password a{
+.remember-password a {
     color: #fff;
     font-weight: 600;
+    margin-left: 100px;
+}
+
+.remember-password a.selected {
+    color: #000; /* Change the color to black when selected */
+}
+
+.remember-password a:not(.selected) {
+    color: #fff; /* Change the color to white when not selected */
 }
 
 .btn{
