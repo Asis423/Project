@@ -1,9 +1,3 @@
-<?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,8 +42,15 @@
     </section>
     <section class="container-top">
       <?php
-      // Make an AJAX request to fetch bike data from the database
-      $bikeData = json_decode(file_get_contents('gallery_fetch.php'), true);
+        // Make an AJAX request to fetch bike data from the database
+
+        $curl = curl_init();
+        $url = 'localhost/Project/gallery_fetch.php';
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $bikeData = json_decode($response, true);
       
       // Check if bike data is available
       // var_dump($bikeData);
@@ -58,21 +59,22 @@
           $bikeImg = $bike['bike_image_url'];
           $bikeName = $bike['bike_name'];
           $bikePrice = $bike['bike_price'];
+          $bikeCode = $bike['code'];
       ?>
           <div class="bikes">
             <div class="image">
-              <a href="booking/<?php echo $bikeName; ?>.php">
+              <a href="booking/<?php echo $bikeCode; ?>.php">
                 <img src="img/<?php echo $bikeImg; ?>" alt="Bike">
               </a>
               <h2><?php echo $bikeName; ?></h2>
               <p><?php echo $bikePrice; ?></p>
-              <a href="booking/<?php echo $bikeName; ?>.php" class="enquiry-btn">Enquiry</a>
+              <a href="booking/<?php echo $bikeCode; ?>.php" class="enquiry-btn">Enquiry</a>
             </div>
           </div>
       <?php
         }
       } else {
-        echo '<p>No bike data available</p>';
+        echo '<p> No bike data available</p>';
       }
       ?>
     </section>
