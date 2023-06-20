@@ -234,11 +234,14 @@ header.hide {
 
 .container-top .bikes .image h2 {
     margin-top: 20px; /* Add margin to create space between image and name */
-    margin-bottom: 5px; /* Add margin to create space between name and other texts */
+    margin-bottom: 8px; /* Add margin to create space between name and other texts */
 }
 
 .container-top .bikes .image p {
-    margin-bottom: 5px; /* Add margin to create space between paragraphs */
+    font-family: 'Arial Round', sans-serif;
+    /* font-weight: 600; */
+    font-size: 20px;
+    margin-bottom: 8px; /* Add margin to create space between paragraphs */
 }
 
 .image:hover img{

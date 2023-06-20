@@ -69,15 +69,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="booking.php">
-                        <i class='bx bxs-calendar-alt'></i>
-                        <span class="text">Booking</span>
-                    </a>
-                </li>
-                <li>
                     <a href="gallery.php">
                         <i class='bx bxs-folder '></i>
                         <span class="text">Gallery</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="specifications.php">
+                        <i class='bx bxs-folder '></i>
+                        <span class="text">Specifications</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="booking.php">
+                        <i class='bx bxs-calendar-alt'></i>
+                        <span class="text">Booking</span>
                     </a>
                 </li>
             </ul>

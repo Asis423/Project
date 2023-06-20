@@ -14,13 +14,12 @@
     foreach ($bikeData as $bike) {
       $bikeName = $bike['bike_name'];
       $bikeImg = $bike['background_image_url'];
-      $bikeLogoImg = $bike['logo_image_url'];
       $bikePrice = $bike['price'];
       $bikeCode = $bike['code'];
 
       // Fetch specifications for each bike based on the code
       $specsCurl = curl_init();
-      $specsUrl = 'localhost/Project/booking/specs_fetch.php?code=' . $bikeCode;
+      $specsUrl = 'localhost/Project/booking/specifications.php?code=' . $bikeCode;
       curl_setopt($specsCurl, CURLOPT_URL, $specsUrl);
       curl_setopt($specsCurl, CURLOPT_RETURNTRANSFER, true);
       $specsResponse = curl_exec($specsCurl);
@@ -41,7 +40,7 @@
     <img src="../img/<?php echo $bikeImg; ?>" alt="Background Image">
   </div>
   <div class="logo">
-    <img src="../img/<?php echo $bikeLogoImg; ?>" alt="logo">
+    <img src="../img/logo.png" alt="logo">
   </div>
   <h1><?php echo $bikeName; ?></h1>
   <div class="container">

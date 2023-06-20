@@ -25,10 +25,6 @@
           <td>-</td>
         </tr>
         <tr>
-          <th>Displacement</th>
-          <td>647.96 cc</td>
-        </tr>
-        <tr>
           <th>Peak Power</th>
           <td>47.4 PS @ 7250 rpm</td>
         </tr>
@@ -43,14 +39,6 @@
         <tr>
           <th>Tires</th>
           <td>Tubeless</td>
-        </tr>
-        <tr>
-          <th>Fuel Capacity</th>
-          <td>13.71</td>
-        </tr>
-        <tr>
-          <th>No. of Cylinders</th>
-          <td>2</td>
         </tr>
         <tr>
           <th>Body Type</th>

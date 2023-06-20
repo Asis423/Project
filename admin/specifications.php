@@ -1,41 +1,41 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['email'])) {
-        header("Location: ../connection/login.php");
-        exit();
-    } else {
-        include "../connection/connection.php";
-        
-        // Count the number of users
-        $query = "SELECT COUNT(*) AS user_count FROM users";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        $userCount = $row['user_count'];
+session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: ../connection/login.php");
+    exit();
+} else {
+    include "../connection/connection.php";
 
-        // Count the number of admins
-        $query = "SELECT COUNT(*) AS admin_count FROM admin";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        $adminCount = $row['admin_count'];
-        
-        // Query to get the total booking count
-        // $query = "SELECT COUNT(*) as total_booking FROM booking";
-        // $result = mysqli_query($conn, $query);
-        // $row = mysqli_fetch_assoc($result);
-        // $bookingCount = $row['total_booking'];
+    // Count the number of users
+    $query = "SELECT COUNT(*) AS user_count FROM users";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $userCount = $row['user_count'];
 
-        // Count the number of admins
-        $query = "SELECT COUNT(*) AS bike_count FROM gallery";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        $bikeCount = $row['bike_count'];
-    }
+    // Count the number of admins
+    $query = "SELECT COUNT(*) AS admin_count FROM admin";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $adminCount = $row['admin_count'];
 
-    // Check if user is not logged in, redirect to login page
-    if (!isset($_SESSION['email'])) {
-        header("Location: ../index.php");
-        exit();
-    }
+    // Query to get the total booking count
+    // $query = "SELECT COUNT(*) as total_booking FROM booking";
+    // $result = mysqli_query($conn, $query);
+    // $row = mysqli_fetch_assoc($result);
+    // $bookingCount = $row['total_booking'];
+
+    // Count the number of bikes
+    $query = "SELECT COUNT(*) AS bike_count FROM gallery";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $bikeCount = $row['bike_count'];
+}
+
+// Check if the user is not logged in, redirect to the login page
+if (!isset($_SESSION['email'])) {
+    header("Location: ../index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +44,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="admin_dash.css">
+    <title>Specifications</title>
+    <link rel="stylesheet" href="specifications.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel='stylesheet' href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css'>
 </head>
@@ -150,47 +150,66 @@
                         </span>
                     </li>
                 </ul>
-                <section class="admin-table">
-                    <h2>Admin Information</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Action</th>
-                                <th>Action</th>
-                                <!-- Add more columns as per your admin table structure -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            // Query to retrieve admin information
-                            $query = "SELECT * FROM admin";
-                            $result = mysqli_query($conn, $query);
 
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['username'] . "</td>";
-                                echo "<td>" . $row['email'] . "</td>";
-                                echo "<td>" . $row['password'] . "</td>";
-                                // Add more columns as per your admin table structure
-                            
-                                // Add buttons for CRUD operations
-                                echo "<td><a href='edit_admin.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
-                                echo "<td><a href='delete_admin.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
-                                echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </section>
+                <section class="admin-table">
+                    <h2>Specifications of Bikes</h2>
+                    <table class="table">
+                        <tr>
+                            <th>Bike Name</th>
+                            <th>Background Image URL</th>
+                            <th>Engine</th>
+                            <th>Mileage</th>
+                            <th>Brakes</th>
+                            <th>Tires</th>
+                            <th>Body Type</th>
+                            <th>Price</th>
+                            <th>Code</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                        <?php
+                        // Fetch specifications data from the database
+                        $query = "SELECT * FROM specifications";
+                        $result = mysqli_query($conn, $query);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $bikeName = $row['bike_name'];
+                            $backgroundImageUrl = $row['background_image_url'];
+                            $engine = $row['engine'];
+                            $mileage = $row['mileage'];
+                            $brakes = $row['brakes'];
+                            $tires = $row['tires'];
+                            $bodyType = $row['body_type'];
+                            $price = $row['price'];
+                            $code = $row['code'];
+
+                            echo "<tr>";
+                            echo "<td>$bikeName</td>";
+                            echo "<td>$backgroundImageUrl</td>";
+                            echo "<td>$engine</td>";
+                            echo "<td>$mileage</td>";
+                            echo "<td>$brakes</td>";
+                            echo "<td>$tires</td>";
+                            echo "<td>$bodyType</td>";
+                            echo "<td>$price</td>";
+                            echo "<td>$code</td>";
+
+                            // Add buttons for CRUD operations
+                            echo "<td><a href='edit_specs.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
+                            echo "<td><a href='delete_specs.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+
+                <!-- Add the Create button -->
+                <div class="create-button">
+                    <button onclick="location.href='create_specs.php'" class="button-create">Create</button>
+                </div>
+
             </section>
         </section>
-    </div>
-    
+    </section>
+</div>
 </body>
 </html>
-

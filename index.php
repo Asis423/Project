@@ -65,12 +65,12 @@
       ?>
           <div class="bikes">
             <div class="image">
-              <a href="booking/<?php echo $bikeCode; ?>.php">
+              <a href="booking/specifications.php?code=<?php echo $bikeCode; ?>">
                 <img src="img/<?php echo $bikeImg; ?>" alt="Bike">
               </a>
               <h2><?php echo $bikeName; ?></h2>
-              <p><?php echo $bikePrice; ?></p>
-              <a href="booking/<?php echo $bikeCode; ?>.php" class="enquiry-btn">Enquiry</a>
+              <p>Rs. <?php echo $bikePrice; ?></p>
+              <a href="specs_page.php?code=<?php echo $bikeCode; ?>" class="enquiry-btn">Enquiry</a>
             </div>
           </div>
       <?php
@@ -116,7 +116,6 @@
             Indulge in the extraordinary and embark on a journey of elegance and excitement with Shelby
             Showroom. Book your dream bike today and discover a world where luxury and performance converge,
             setting the stage for unforgettable moments on the open road.
-
           </p>
         </div>
       </section>
@@ -187,8 +186,11 @@
           <h4> Contact Us </h4>
           <ul>
             <li class="register_style">
+              <p>Searching for a bike?</p>
+            </li>
+            <li class="register_style">
               <p>Do you want to book a bike?</p>
-              <a href="signup_page.php"> Register ?</a>
+              <a href="signup_page.php"> Book Here</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
@@ -206,7 +208,7 @@
         <p> 2023 Shelby. All rights reserved.</p>
         <p>Use of this site constitutes acceptance of our User Agreement and privacy policy.</p>
         <p>The Material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except
-          with the prior written permission of Shelby.</p>
+          with the prior written permission of Mr. Shelby.</p>
       </div>
     </div> <!-- footer_containerright -->
 
@@ -214,5 +216,4 @@
   <!-- footer section starts  ---------------------------------------------------------------------------------------->
 
 </body>
-
 </html>

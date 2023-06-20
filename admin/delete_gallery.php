@@ -11,29 +11,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $row = mysqli_fetch_assoc($result);
     $bikeCode = $row['code'];
 
-    // Display confirmation alert
-    echo "<script>
-        if (confirm('Are you sure you want to delete this bike?')) {
-            // User confirmed, proceed with deletion
-            // Delete the row from the gallery table
-            var deleteQuery = 'DELETE FROM gallery WHERE id = $id';
-            fetch(deleteQuery)
-                .then(response => response.json())
-                .then(data => {
-                    // Show success message
-                    var message = `The bike of code '${bikeCode}' has been deleted successfully`;
-                    alert(message);
-                    // Redirect back to the gallery page or any other desired location after 5 seconds
-                    setTimeout(function() {
-                        window.location.href = 'gallery.php';
-                    }, 3000);
-                })
-                .catch(error => console.log(error));
-        } else {
-            // User canceled, redirect to gallery.php
+    // Delete the row from the gallery table
+    $deleteQuery = "DELETE FROM gallery WHERE id = $id";
+    $deleteResult = mysqli_query($conn, $deleteQuery);
+
+    if ($deleteResult) {
+        // Show success message
+        echo "<script>
+            var message = 'The bike of code \'$bikeCode\' has been deleted successfully';
+            alert(message);
+            // Redirect back to the gallery page or any other desired location after 5 seconds
+            setTimeout(function() {
+                window.location.href = 'gallery.php';
+            }, 3000);
+        </script>";
+    } else {
+        // Display error message
+        echo "<script>
+            var message = 'Failed to delete the bike';
+            alert(message);
+            // Redirect to gallery.php
             window.location.href = 'gallery.php';
-        }
-    </script>";
+        </script>";
+    }
 
     // Prevent further execution of the script
     exit;
