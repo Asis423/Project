@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Showroom Booking System</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Showroom Booking System</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
   <div class="heading-section" id="home">
-  <!-- Header starts ------------------------------------------------------------------------------- -->
+    <!-- Header starts ------------------------------------------------------------------------------- -->
     <header>
       <div class="logo"><img src="img/logo.png" alt="logo"></div>
       <nav class="navbar">
@@ -31,8 +33,8 @@
       </div>
     </div>
   </div>
-  <!-- Header Ends ------------------------------------------------------------------------------- -->        
-    
+  <!-- Header Ends ------------------------------------------------------------------------------- -->
+
   <!-- Gallery Starts ------------------------------------------------------------------------------- -->
 
   <!-- Gallery section Starts -->
@@ -84,44 +86,44 @@
   <!-- Gallery section Ends Here ------------------------------------------------------------------------------- -->
 
   <!-- About Us Starts ------------------------------------------------------------------------------- -->
-  
+
   <section class="aboutus" id="aboutus">
     <section class="clip_path_aboutus">
       <h1>About Us</h1>
     </section>
     <div class="container-about">
-    <p>Welcome to Shelby Showroom, Nepal's First Automobile Search Venture, that helps you book royal 
-      bikes online in the easiest way possible.</p>
+      <p>Welcome to Shelby Showroom, Nepal's First Automobile Search Venture, that helps you book royal
+        bikes online in the easiest way possible.</p>
       <section class="about_section">
         <div class="about-image">
           <img src="img/about-us.jpg" alt="bike">
         </div>
         <div class="about-content">
           <h2>Explore new horizons on two wheels</h2>
-          <p>Welcome to Shelby Showroom, your premier destination for luxury bike bookings. Our showroom is 
-            dedicated to providing you with an exceptional experience that combines the thrill of riding with 
+          <p>Welcome to Shelby Showroom, your premier destination for luxury bike bookings. Our showroom is
+            dedicated to providing you with an exceptional experience that combines the thrill of riding with
             the elegance of luxury bikes.<br><br>
-            At Shelby Showroom, we showcase a meticulously curated collection of top-tier bikes that embody 
-            the perfect blend of style, performance, and craftsmanship. Each bike in our showroom is 
+            At Shelby Showroom, we showcase a meticulously curated collection of top-tier bikes that embody
+            the perfect blend of style, performance, and craftsmanship. Each bike in our showroom is
             handpicked to ensure that it meets our stringent standards of excellence.<br><br>
-            When you choose Shelby Showroom for your bike booking, you can expect personalized attention and a 
-            seamless process from start to finish. Our knowledgeable team is passionate about bikes and will 
+            When you choose Shelby Showroom for your bike booking, you can expect personalized attention and a
+            seamless process from start to finish. Our knowledgeable team is passionate about bikes and will
             assist you in finding the perfect match for your riding preferences and aspirations.<br><br>
-            We understand that owning a luxury bike is more than just a possession – it's a statement of 
-            individuality and a gateway to unforgettable adventures. With our bike booking service, you have 
-            the opportunity to embrace the road with confidence, knowing that you're riding a machine that 
+            We understand that owning a luxury bike is more than just a possession – it's a statement of
+            individuality and a gateway to unforgettable adventures. With our bike booking service, you have
+            the opportunity to embrace the road with confidence, knowing that you're riding a machine that
             represents the pinnacle of engineering and design.<br><br>
-            Indulge in the extraordinary and embark on a journey of elegance and excitement with Shelby 
-            Showroom. Book your dream bike today and discover a world where luxury and performance converge, 
+            Indulge in the extraordinary and embark on a journey of elegance and excitement with Shelby
+            Showroom. Book your dream bike today and discover a world where luxury and performance converge,
             setting the stage for unforgettable moments on the open road.
-            
-</p>
+
+          </p>
         </div>
       </section>
     </div>
-  </section> 
+  </section>
   <!-- About Us Ends ------------------------------------------------------------------------------- -->
-  
+
   <!-- Contact section starts here ---------------------------------------------------------------------------------------------->
 
   <section class="contact" id="contact">
@@ -163,7 +165,7 @@
   </section>
   <!-- Contact section ends here ----------------------------------------------------------------------------------------------->
 
-    <!-- footer section starts ---------------------------------------------------------------------------------------------------- -->
+  <!-- footer section starts ---------------------------------------------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer_containerleft">
       <img src="img/logo.png" alt="Logo" class="img" />
@@ -186,7 +188,7 @@
           <ul>
             <li class="register_style">
               <p>Do you want to book a bike?</p>
-              <a href="signup_page.php">  Register ?</a>
+              <a href="signup_page.php"> Register ?</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
@@ -212,4 +214,5 @@
   <!-- footer section starts  ---------------------------------------------------------------------------------------->
 
 </body>
+
 </html>
