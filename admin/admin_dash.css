@@ -264,14 +264,14 @@ margin-top: 48px;
   justify-content: center;
 }
 .box-info{
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
 }
 .box-info li{
     background-color: #dddddd;
     padding: 12px;
-    margin: 75px;
+    margin: 50px;
     border-radius: 10px;
     box-shadow: 8px 5px 5px #aaaaaa;
     display: inline-block;
@@ -311,7 +311,7 @@ margin-top: 48px;
   vertical-align: middle;
 }
 
-.table {
+/* .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -341,4 +341,108 @@ th {
 }
 a{
   text-decoration: none;
+} */
+
+.admin-table {
+  margin: 20px auto; /* Center the table horizontally and add margin to prevent touching the side bar */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.admin-table h2 {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 30px;
+  color: #000;
+  margin-bottom: 50px;
+}
+
+.admin-table .table {
+  width: auto;
+  border-collapse: collapse;
+  table-layout: auto; /* Prevent the table from expanding based on content */
+}
+
+.admin-table th,
+.admin-table td {
+  font-family: 'Century Gothic', sans-serif;
+  padding: 13px 40px;
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  position: relative; /* Add position relative to the table cells */
+}
+
+.admin-table th {
+  font-size: 22px;
+  font-family: 'Century Gothic', sans-serif;
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.admin-table td {
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 10px; /* Add spacing above table cell content */
+}
+
+.admin-table td a button {
+  font-family: 'Century Gothic', sans-serif;
+  font-style: oblique;
+  font-size: 14px;
+  padding: 7px 15px;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-table td a .button-edit {
+  background-color: #ff8800;
+}
+
+.admin-table td a .button-update {
+  background-color: #00dd00;
+}
+
+.admin-table td a .button-delete {
+  background-color: #ff0000;
+}
+
+.admin-table td a .button-edit:hover {
+  background-color: #e67300;
+}
+
+.admin-table td a .button-update:hover {
+  background-color: #00bb00;
+}
+
+.admin-table td a .button-delete:hover {
+  background-color: #cc0000;
+}
+
+.create-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.button-create {
+  font-family: 'Century Gothic', sans-serif;
+  font-style: oblique;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0000ee;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button-create:hover {
+  background-color: #0000bb;
+}
+

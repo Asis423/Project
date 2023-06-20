@@ -145,41 +145,50 @@
                     </li>
                 </ul>
                 <section class="admin-table">
-                    <h2>Admin Information</h2>
+                    <h2>Gallery Information</h2>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Action</th>
-                                <th>Action</th>
+                                <th>Bike Name</th>
+                                <th>Bike Image</th>
+                                <th>Price</th>
+                                <th>Code</th>
+                                <th colspan="2">Action</th>
+                                <!-- <th>Action</th>
+                                <th>Action</th> -->
                                 <!-- Add more columns as per your admin table structure -->
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             // Query to retrieve admin information
-                            $query = "SELECT * FROM admin";
+                            $query = "SELECT * FROM gallery";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['username'] . "</td>";
-                                echo "<td>" . $row['email'] . "</td>";
-                                echo "<td>" . $row['password'] . "</td>";
+                                echo "<td>" . $row['bike_name'] . "</td>";
+                                echo "<td>" . $row['bike_image_url'] . "</td>";
+                                echo "<td>" . $row['bike_price'] . "</td>";
+                                echo "<td>" . $row['code'] . "</td>";
                                 // Add more columns as per your admin table structure
                             
                                 // Add buttons for CRUD operations
-                                echo "<td><a href='edit_admin.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
-                                echo "<td><a href='delete_admin.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                                echo "<td><a href='edit_gallery.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
+                                echo "<td><a href='delete_gallery.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                             ?>
                         </tbody>
                     </table>
+
+                    <!-- Add the Create button -->
+                    <div class="create-button">
+                        <button onclick="location.href='create_gallery.php'" class="button-create">Create</button>
+                    </div>
+
                 </section>
             </section>
         </section>
