@@ -28,7 +28,7 @@
             <div class="dropdown-content">
                 <a href="users_dash.php">My Profile</a>
                 <a href="my_bookings.php">My Bookings</a>
-                <a href="logout.php">Logout</a>
+                <a href="../connection/logout.php">Logout</a>
             </div>
             </div>
         </nav>
@@ -76,7 +76,7 @@
           <div class="bikes">
             <div class="image">
               <a href="../specs_page.php?code=<?php echo $bikeCode; ?>">
-                <img src="img/<?php echo $bikeImg; ?>" alt="Bike">
+                <img src="../img/<?php echo $bikeImg; ?>" alt="Bike">
               </a>
               <h2><?php echo $bikeName; ?></h2>
               <p>Rs. <?php echo $bikePrice; ?></p>
@@ -177,7 +177,7 @@
   <!-- footer section starts ---------------------------------------------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer_containerleft">
-      <img src="img/logo.png" alt="Logo" class="img" />
+      <img src="../img/logo.png" alt="Logo" class="img" />
     </div>
     <div class="footer_containerright">
       <div class="row">
@@ -200,7 +200,7 @@
             </li>
             <li class="register_style">
               <p>Do you want to book a bike?</p>
-              <a href="signup_page.php"> Book Here</a>
+              <a href="#gallery"> Book Here</a>
             </li>
           </ul>
         </div> <!-- footer-col -->
