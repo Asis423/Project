@@ -65,7 +65,7 @@
       ?>
           <div class="bikes">
             <div class="image">
-              <a href="booking/specifications.php?code=<?php echo $bikeCode; ?>">
+              <a href="specs_page.php?code=<?php echo $bikeCode; ?>">
                 <img src="img/<?php echo $bikeImg; ?>" alt="Bike">
               </a>
               <h2><?php echo $bikeName; ?></h2>

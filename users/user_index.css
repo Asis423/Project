@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic bold', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-padding-top: 60px;
+}
+
+/* Heading section begins -----------------------------------------------------------------------------------------------*/
+
+
+.heading-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+display: flex;
+align-items: center;
+position: relative;
+left: 10%;
+transform: translateX(-50%);
+}
+
+.logo img {
+width: 180px;
+height: auto;
+}
+
+.navbar > a {
+position: relative;
+font-size: 18px;
+color: white;
+text-decoration: none;
+font-weight: 500;
+margin-left: 40px;
+}
+
+.navbar > a::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -6px;
+width: 100%;
+height: 3px;
+background: orange;
+border-radius: 5px;
+transform-origin: right;
+transform: scaleX(0);
+transition: transform .5s;
+}
+
+.navbar > a:hover::after {
+transform-origin: left;
+transform: scaleX(1);
+}
+
+.navbar .btn-user {
+    position: relative;
+    top: 10px;
+background: transparent;
+outline: none;
+border: none;
+padding: 10px 50px;
+cursor: pointer;
+}
+
+.navbar .btn-user img {
+    margin-top: 5px;
+width: 35px;
+height: 35px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+right: 0;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.home-info {
+max-width: 1550px;
+margin: auto;
+width: 100%;
+min-height: 800px;
+display: flex;
+align-items: center;
+}
+
+.home-text h1 {
+font-size: 80px;
+font-weight: 800;
+font-family: helvetica;
+line-height: 90px;
+color: #fff;
+}
+
+.home-text p {
+position: relative;
+top: 15px;
+font-size: 20px;
+color: rgb(175, 175, 175);
+}
+
+.home-text .btn {
+position: relative;
+top: 50px;
+padding: 12px 32px;
+background: #db8e00;
+outline: none;
+border-radius: 25px;
+cursor: pointer;
+font-size: 20px;
+color: white;
+margin-left: 125px;
+transition: 0.5s ease;
+text-decoration: none;
+}
+
+.home-text .btn:hover {
+background: #ffa000;
+box-shadow: 0 0 5px #ffa000, 0 0 15px #ffa000, 0 0 45px #ffa000;
+}
+
+
+/* Heading Section Ends -----------------------------------------------------------------------------------------------*/
+
+/* Gallery Section Begins -----------------------------------------------------------------------------------------------*/
+
+.gallery h1 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.clip_path {
+    padding: 30px 0 35px 0; /* Decrease the bottom padding */
+    background-color: #333;
+    position: relative;
+}
+  
+.clip_path::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%; /* Increase the height for a stronger blur effect */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #333); /* Adjust the opacity as needed */
+    filter: blur(25px); /* Increase the blur intensity as needed */
+    pointer-events: none;
+}
+
+/* Top 3 Bikes ---------------------------------- */
+.container-top{
+    display: flex;
+    justify-content: center;
+    background: #a8a8a8;
+    position: center;
+    /* width: 100vw; */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.container-top .bikes{
+    width: 325px;
+    position: relative;
+    height: 400px;
+    background: #f0f0f0;
+    margin: 30px 50px;
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px #a8a8a8;
+    transition: 0.5s ease-in-out;
+    margin-top: 5%;
+}
+
+ .container-top .bikes .image{
+    position: relative;
+    width: 260px;
+    height: auto;
+    top: -50px;
+    left: 13px;
+    box-shadow: 0 5px 20px rbga(0,0,0,1.2);
+}
+
+.container-top .bikes .image .img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.container-top .bikes .image h2 {
+    margin-top: 20px; /* Add margin to create space between image and name */
+    margin-bottom: 8px; /* Add margin to create space between name and other texts */
+}
+
+.container-top .bikes .image p {
+    font-family: 'Arial Round', sans-serif;
+    /* font-weight: 600; */
+    font-size: 20px;
+    margin-bottom: 8px; /* Add margin to create space between paragraphs */
+}
+
+.image:hover img{
+    transform: scale(1.1);
+}
+
+.container-top .bikes .image .enquiry-btn{
+    display: inline-block;
+    position: relative;
+    padding: 10px 35px;
+    background: #db8e00;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: 0.5s ease;
+    text-decoration: none;
+    margin-top: 2px;
+}
+
+.container-top .bikes .image .enquiry-btn:hover{
+    background: #ffa000;
+    box-shadow: 0 0 5px #ffa000, 0 0 10px #ffa000, 0 0 15px #ffa000;
+    border: none;
+}
+
+/* Gallery Section Ends -----------------------------------------------------------------------------------------------*/
+
+/* About Us section begins -----------------------------------------------------------------------------------------------*/
+ 
+.aboutus h1 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+  
+.clip_path_aboutus {
+    padding: 30px 0 35px 0; /* Decrease the bottom padding */
+    background-color: #333;
+    position: relative;
+}
+  
+.clip_path_aboutus::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position the rectangle at the bottom */
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust the height of the white rectangle */
+    background-color: #ffffff; /* Set the color of the rectangle */
+}
+  
+.clip_path_aboutus::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%; /* Increase the height for a stronger blur effect */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #333); /* Adjust the opacity as needed */
+    filter: blur(25px); /* Increase the blur intensity as needed */
+    pointer-events: none;
+}
+
+.container-about{
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #a8a8a8;
+    text-align: center;
+}
+
+.container-about p{
+    font-size: 25px;
+    color: #fff;
+    margin-top: 0px;
+    padding: 60px 0px;
+}
+
+.about_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px 200px;
+    text-align: justify;
+}
+
+.about-image{
+    flex: 1;
+    margin-right: 40px;
+    overflow: hidden;
+}
+
+.about-image img{
+    width: 97%;
+    height: auto;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.about-image:hover img{
+    transform: scale(1.2);
+}
+
+.about-content{
+    flex: 1;
+}
+
+.about-content h2{
+    font-size: 30px;
+    margin-top: 5px;
+    color: #24262b;
+}
+
+.about-content p{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* About Section section Ends -----------------------------------------------------------------------------------------------*/
+
+/* Contact section begins -----------------------------------------------------------------------------------------------*/
+ 
+.contact h1 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+  
+.clip_path_contact {
+    padding: 30px 0 35px 0; /* Decrease the bottom padding */
+    background-color: #333;
+    position: relative;
+}
+  
+.clip_path_contact::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Position the rectangle at the bottom */
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust the height of the white rectangle */
+    background-color: #ffffff; /* Set the color of the rectangle */
+}
+  
+.clip_path_contact::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%; /* Increase the height for a stronger blur effect */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #333); /* Adjust the opacity as needed */
+    filter: blur(25px); /* Increase the blur intensity as needed */
+    pointer-events: none;
+}
+  
+.contact_section{
+    display: flex;
+    background: #a8a8a8;
+    align-items: center;
+    justify-content: center;
+}
+
+.row1 {
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 50px 20px 10px;
+    margin: 10px;
+}
+.row1 input{
+    width: 50%;
+    padding: 0 5px;
+    margin-bottom: 10px;
+    height: 40px;
+    font-size: 16px;
+    outline: none;
+}
+.row1 input.verify:invalid{
+    border: 1px solid #F85151;
+    animation: shake 0.2s 2;
+}
+@keyframes shake{
+    25%{
+        translate: 6px 0;
+    }
+    50% {
+        translate: -6px 0;
+    }         
+    75% {
+        translate: 6px 0;
+    }                
+}
+
+.row1 textarea{
+    width: 50%;
+    height: 150px;
+    padding: 12px 5px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+    resize: none;
+    color: #333;
+    margin: 1.2rem 0;
+    font-family: "poppins";
+}
+
+.row1 .send_btn{
+    width: 50%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    background-color: #F85151;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif'
+}
+
+.row1 .send_btn:hover {
+    background-color: #7CB9E8;
+    transition: .3s;
+}
+.row1 form p{
+    font-size: 27px;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 700;
+}
+
+.contact-col {
+    width: 30%;
+    padding: 0 15px;
+    height: 345px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.contact-col h4 {
+    font-size: 27px;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 700;
+    position: relative;
+}
+
+.contact-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.contact-col ul li p {
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 300;
+    color: #5c5b5b;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.contact-col ul li {
+    margin: 10px 10px 10px 0;
+}
+
+.contact-col span {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(145, 144, 144, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #333;
+    transition: all 0.5s ease;
+}
+/* contact section ends -----------------------------------------------------------------------------------------------*/
+
+/* footer starts here  -----------------------------------------------------------------------------------------------------*/
+.footer{
+    background: #24262b;
+    padding: 70PX 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .img{
+    width: 300px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.footer_containerleft{
+display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.footer_containerright{
+    display: flex;
+    flex-direction: column;
+    width: 1350px;
+    margin: auto;
+    border-left: 1px solid #ffffff;
+}
+ul{
+    list-style: none;
+}
+
+.row{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+
+.footer-col{
+width: 25%;
+padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px ;
+    font-weight: 500;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(255, 150, 0);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li{
+        margin: 10px 10px 10px 0;
+}
+
+.footer-col ul li a, .footer-col ul li p{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 7px;
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.footer-col .register_style a{
+    font-size: 20px;
+    color: rgb(255, 150, 0);
+}
+
+.copyright1 {
+    font-size: 12px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: 300;
+    color: #8d8b8b;
+    display: block;
+    transition: all 0.3s ease;
+}
+/* footer starts here  ------------------------------------------------------------------------------------------------------*/

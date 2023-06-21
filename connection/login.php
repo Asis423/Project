@@ -24,12 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password should be at least 8 characters long";
     }
     if (!preg_match("/[a-z]/i", $_POST["password"])) {
-        echo '<script>alert("Password must contain at least one letter");</script>';
-        die();
+        $errors[] = "Password must contain at least one letter";
     }
     if (!preg_match("/[0-9]/", $_POST["password"])) {
-        echo '<script>alert("Password must contain at least one number");</script>';
-        die();
+        $errors[] = "Password must contain at least one number";
     }
 
     if (empty($errors)) {
@@ -44,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Redirect to the admin dashboard page
                 header("Location: ../admin/admin_dash.php");
+                exit();
             } else {
                 $errors[] = "Invalid admin credentials";
             }
@@ -57,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Redirect to the user dashboard page
                 header("Location: ../users/user_index.php");
+                exit();
             } else {
                 $errors[] = "Invalid user credentials";
             }
@@ -64,10 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!empty($errors)) {
-        // Display validation errors
+        // Display validation errors and alert message
         foreach ($errors as $error) {
             echo $error . "<br>";
         }
+        echo '<script>alert("Invalid email or password");</script>';
     }
 }
 

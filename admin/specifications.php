@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header("Location: ../connection/login.php");
+    header("Location: ../login_page.php");
     exit();
 } else {
     include "../connection/connection.php";

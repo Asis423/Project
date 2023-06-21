@@ -1,6 +1,9 @@
 <?php
   require_once 'connection/connection.php';
 
+  // Start the session
+  session_start();
+
   // Retrieve the bike code from the query parameter
   $bikeCode = $_GET['code'];
 
@@ -29,6 +32,9 @@
     // If no rows are returned, display an error message or handle the case accordingly
     echo "No specifications found for the given bike code.";
   }
+
+    // Check if the user is logged in
+  $loggedIn = isset($_SESSION['email']);
 
   // Close the database connection
   $conn->close();
@@ -99,8 +105,16 @@
         <span>Price: <?php echo $bikePrice; ?></span>
     </div>
   </div>
-  <div class="book-btn">
-    <a href="../signup_page.php">Book Now</a>
-  </div>
+  <?php if ($loggedIn) { ?>
+    <!-- Button to book the bike for logged-in users -->
+    <div class="book-btn">
+      <a href="booking_page.php?code=<?php echo $bikeCode; ?>">Book Now</a>
+    </div>
+  <?php } else { ?>
+    <!-- Button to redirect to login page for non-logged-in users -->
+    <div class="book-btn">
+      <a href="login_page.php">Book Now</a>
+    </div>
+<?php } ?>
 </body>
 </html>
