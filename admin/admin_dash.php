@@ -53,7 +53,8 @@
     <div class="dashboard">
         <section id="sidebar">
             <div class="icon1">
-                <img src="admin_img/admin.png" alt="Logo1">
+                <a href="../index.php">
+                <img src="admin_img/admin.png" alt="Logo1"></a>
             </div>
             <ul class="side-menu top">
                 <li>
@@ -76,7 +77,7 @@
                 </li>
                 <li>
                     <a href="specifications.php">
-                        <i class='bx bxs-folder '></i>
+                        <i class='bx bx-folder'></i>
                         <span class="text">Specifications</span>
                     </a>
                 </li>
@@ -112,41 +113,36 @@
                     <div class="profile">
                         <img src="admin_img/admin_avatar.png" alt="Avatar" class="avatar">
                     </div>
-                    <div class="notification_icon">
-                        <button class="notification_btn" title="Notification">
-                            <a href="#"><span class="material-symbols-outlined">notifications</span></a>
-                        </button>
-                    </div>
                 </div>
             </section>
             <section class="right-lower">
                 <ul class="box-info">
                     <li>
-                        <i class='bx bx-user user-icon'></i>
+                        <i class='bx bx-user bx-icon'></i>
                         <span class="text">
                             <h3><?php echo $userCount; ?></h3>
-                            <p>No. of Users</p>
+                            <p>No. of<br>Users</p>
                         </span>
                     </li>
                     <li>
-                        <i class='bx bx-user-circle admin-icon'></i>
+                        <i class='bx bx-user-circle bx-icon'></i>
                         <span class="text">
                             <h3><?php echo $adminCount; ?></h3>
-                            <p>No. of Admins</p>
+                            <p>No. of<br>Admins</p>
                         </span>
                     </li>
                     <li>
-                        <i class='bx bx-calendar booking-icon'></i>
+                        <i class='bx bx-calendar bx-icon'></i>
                         <span class="text">
                             <!-- <h3><?php echo $bookingCount; ?></h3> -->
-                            <p>Total Booking</p>
+                            <p>Total<br>Booking</p>
                         </span>
                     </li>
                     <li>
-                        <i class='bx bx-wallet booking-icon'></i>
+                        <i class='bx bx-wallet bx-icon'></i>
                         <span class="text">
                             <h3><?php echo $bikeCount; ?></h3>
-                            <p>Total Bikes</p>
+                            <p>Total<br>Bikes</p>
                         </span>
                     </li>
                 </ul>

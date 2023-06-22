@@ -102,7 +102,7 @@
       </table>
     </div>
     <div class="price">
-        <span>Price: <?php echo $bikePrice; ?></span>
+        <span>Price: Rs. <?php echo $bikePrice; ?> Lakh* /-</span>
     </div>
   </div>
   <?php if ($loggedIn) { ?>

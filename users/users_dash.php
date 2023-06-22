@@ -65,7 +65,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -92,17 +92,17 @@
             <section class="right-lower">
                 <ul class="box-info">
                     <li>
-                        <i class='bx bx-calendar booking-icon'></i>
+                        <i class='bx bx-calendar bx-icon'></i>
                         <span class="text">
                             <!-- <h3><?php echo $bookingCount; ?></h3> -->
-                            <p>My Bookings</p>
+                            <p>My<br>Bookings</p>
                         </span>
                     </li>
                     <li>
-                        <i class='bx bx-wallet booking-icon'></i>
+                        <i class='bx bx-wallet bx-icon'></i>
                         <span class="text">
                             <h3><?php echo $bikeCount; ?></h3>
-                            <p>Total Bikes</p>
+                            <p>Total<br>Bikes</p>
                         </span>
                     </li>
                 </ul>

@@ -23,7 +23,7 @@
             <a href="#contact">Contact Us</a>
             <div class="dropdown">
             <button class="btn-user">
-                <img src="users_img/users.png" alt="user logo">
+                <img src="users_img/user-logo.png" alt="user logo">
             </button>
             <div class="dropdown-content">
                 <a href="users_dash.php">My Profile</a>

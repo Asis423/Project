@@ -48,7 +48,7 @@ transform: translateX(-50%);
 }
 
 .logo img {
-width: 180px;
+width: 190px;
 height: auto;
 }
 
@@ -92,8 +92,8 @@ cursor: pointer;
 
 .navbar .btn-user img {
     margin-top: 5px;
-width: 35px;
-height: 35px;
+width: 40px;
+height: 40px;
 }
 
 .dropdown {

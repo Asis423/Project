@@ -28,8 +28,8 @@
                 <div class="role-selection">
                     <label for="role">Select Role:</label>
                     <select name="role" id="role">
-                        <option value="admin">Admin</option>
                         <option value="user">User</option>
+                        <option value="admin">Admin</option>
                     </select>
                 </div>
                 <div class="remember-password">
