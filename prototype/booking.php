@@ -19,10 +19,10 @@
         $adminCount = $row['admin_count'];
         
         // Query to get the total booking count
-        $query = "SELECT COUNT(*) as total_booking FROM bookings";
-        $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_assoc($result);
-        $bookingCount = $row['total_booking'];
+        // $query = "SELECT COUNT(*) as total_booking FROM booking";
+        // $result = mysqli_query($conn, $query);
+        // $row = mysqli_fetch_assoc($result);
+        // $bookingCount = $row['total_booking'];
 
         // Count the number of admins
         $query = "SELECT COUNT(*) AS bike_count FROM gallery";
@@ -77,26 +77,26 @@
                 </li>
                 <li>
                     <a href="specifications.php">
-                        <i class='bx bx-folder'></i>
+                        <i class='bx bx-folder '></i>
                         <span class="text">Specifications</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="booking.php">
                         <i class='bx bxs-calendar-alt'></i>
                         <span class="text">Booking</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <ul class="side-menu">
-                <!-- <li>
+                <li>
                     <a href="#">
                         <i class='bx bxs-cog'></i>
                         <span class="text">Settings</span>
                     </a>
-                </li> -->
+                </li>
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="logout.php" class="logout">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -131,13 +131,13 @@
                             <p>No. of<br>Admins</p>
                         </span>
                     </li>
-                    <li>
+                    <!-- <li>
                         <i class='bx bx-calendar bx-icon'></i>
                         <span class="text">
                             <h3><?php echo $bookingCount; ?></h3>
                             <p>Total<br>Booking</p>
                         </span>
-                    </li>
+                    </li> -->
                     <li>
                         <i class='bx bx-wallet bx-icon'></i>
                         <span class="text">

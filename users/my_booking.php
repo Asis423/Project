@@ -6,11 +6,18 @@
     } else {
         include "../connection/connection.php";
         
-        // Query to get the tuser booking count
-        // $query = "SELECT COUNT(*) as my_booking FROM booking";
-        // $result = mysqli_query($conn, $query);
-        // $row = mysqli_fetch_assoc($result);
-        // $bookingCount = $row['my_booking'];
+         // Retrieve user ID from the session
+        $userEmail = $_SESSION['email'];
+        $queryUser = "SELECT id FROM users WHERE email = '$userEmail'";
+        $resultUser = mysqli_query($conn, $queryUser);
+        $rowUser = mysqli_fetch_assoc($resultUser);
+        $userId = $rowUser['id'];
+
+        // Query to get the user booking count
+        $query = "SELECT COUNT(*) as my_booking FROM bookings";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $bookingCount = $row['my_booking'];
 
         // Count the number of bikes on gallery
         $query = "SELECT COUNT(*) AS bike_count FROM gallery";
@@ -107,60 +114,61 @@
                     </li>
                 </ul>
                 <section class="admin-table">
-                    <h2>My Information</h2>
+                    <h2>My Bookings</h2>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Username</th>
-                                <th>Mobile No.</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Action</th>
-                                <!-- <th>Action</th> -->
+                                <th>Bike Name</th>
+                                <th>Price</th>
+                                <th>Time</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                <th colspan="2">Action</th>
                                 <!-- Add more columns as per your admin table structure -->
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                // Retrieve information for the logged-in user
-                                $userEmail = $_SESSION['email'];
-                                $query = "SELECT * FROM users WHERE email = '$userEmail'";
+                                // Retrieve the booking details for the current user
+                                $query = "SELECT * FROM bookings WHERE user_id = '$userId'";
                                 $result = mysqli_query($conn, $query);
 
                                 // Check if the query returned any rows
                                 if (mysqli_num_rows($result) > 0) {
-                                    $userRow = mysqli_fetch_assoc($result);
-                                    $userId = $userRow['id'];
-                                    $username = $userRow['username'];
-                                    $mobileNumber = $userRow['mobile_number'];
-                                    $userEmail = $userRow['email'];
-                                    $password = $userRow['password'];
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $bikeName = $row['bike_name'];
+                                        $bikePrice = $row['price'];
+                                        $bookingTime = $row['time'];
+                                        $startDate = $row['start_date'];
+                                        $endDate = $row['end_date'];
+                                        $bookingStatus = $row['status'];
+                                        $bookingId = $row['id'];
 
-                                    // Mask the password
-                                    $maskedPassword = substr($password, 0, 2) . str_repeat("*", strlen($password) - 2);
+                                        // Add the booking information to the table
+                                        echo "<tr>";
+                                        echo "<td>" . $bikeName . "</td>";
+                                        echo "<td>" . $bikePrice . "</td>";
+                                        echo "<td>" . $bookingTime . "</td>";
+                                        echo "<td>" . $startDate . "</td>";
+                                        echo "<td>" . $endDate . "</td>";
+                                        echo "<td>" . $bookingStatus . "</td>";
+                                        echo "<td><a href='edit_booking.php?id=" . $bookingId . "'><button class='button-edit'>Edit</button></a></td>";
+                                        echo "<td><a href='delete_booking.php?id=" . $bookingId . "'><button class='button-delete'>Delete</button></a></td>";
 
-                                    // Add the user information to the table
-                                    echo "<tr>";
-                                    echo "<td>" . $userId . "</td>";
-                                    echo "<td>" . $username . "</td>";
-                                    echo "<td>" . $mobileNumber . "</td>";
-                                    echo "<td>" . $userEmail . "</td>";
-                                    echo "<td>" . $maskedPassword . "</td>";
-                                    // Add more columns as per your admin table structure
-
-                                    // Add buttons for CRUD operations
-                                    echo "<td><a href='edit_profile.php?id=" . $userId . "'><button class='button-edit'>Change</button></a></td>";
-                                    echo "</tr>";
+                                        echo "</tr>";
+                                    }
                                 } else {
-                                    echo "<tr><td colspan='5'>No user information found.</td></tr>";
+                                    echo "<tr><td colspan='7'>No booking information found.</td></tr>";
                                 }
                             ?>
+                        </tbody>
                     </table>
                 </section>
             </section>
         </section>
     </div>
+    
 </body>
 </html>
 

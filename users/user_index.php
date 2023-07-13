@@ -27,7 +27,7 @@
             </button>
             <div class="dropdown-content">
                 <a href="users_dash.php">My Profile</a>
-                <a href="my_bookings.php">My Bookings</a>
+                <a href="my_booking.php">My Bookings</a>
                 <a href="../connection/logout.php">Logout</a>
             </div>
             </div>

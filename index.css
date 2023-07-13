@@ -6,12 +6,9 @@
     font-family: 'Century Gothic bold', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body{
     scroll-padding-top: 60px;
+    scroll-behavior: smooth;
 }
 
 /* Heading section begins -----------------------------------------------------------------------------------------------*/

@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="price">Price:</label>
-                <input type="number" id="price" placeholder="Enter Price Here" step="0.01" inputmode="decimal" name="price" required>
+                <input type="number" id="price" placeholder="Enter Price Here" name="price" required>
             </div>
             <div class="form-group">
                 <label for="bike_image">Background Image:</label>

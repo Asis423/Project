@@ -19,10 +19,10 @@
         $adminCount = $row['admin_count'];
         
         // Query to get the total booking count
-        // $query = "SELECT COUNT(*) as total_booking FROM booking";
-        // $result = mysqli_query($conn, $query);
-        // $row = mysqli_fetch_assoc($result);
-        // $bookingCount = $row['total_booking'];
+        $query = "SELECT COUNT(*) as total_booking FROM bookings";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $bookingCount = $row['total_booking'];
 
         // Count the number of admins
         $query = "SELECT COUNT(*) AS bike_count FROM gallery";
@@ -128,7 +128,7 @@
                     <li>
                         <i class='bx bx-calendar bx-icon'></i>
                         <span class="text">
-                            <!-- <h3><?php echo $bookingCount; ?></h3> -->
+                            <h3><?php echo $bookingCount; ?></h3>
                             <p>Total<br>Booking</p>
                         </span>
                     </li>

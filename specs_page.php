@@ -33,8 +33,11 @@
     echo "No specifications found for the given bike code.";
   }
 
-    // Check if the user is logged in
+  // Check if the user is logged in
   $loggedIn = isset($_SESSION['email']);
+
+  // Check if the user is an admin
+  $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
   // Close the database connection
   $conn->close();
@@ -105,16 +108,21 @@
         <span>Price: Rs. <?php echo $bikePrice; ?> Lakh* /-</span>
     </div>
   </div>
-  <?php if ($loggedIn) { ?>
-    <!-- Button to book the bike for logged-in users -->
+  <?php if ($loggedIn && !$isAdmin) { ?>
+    <!-- Button to book the bike for logged-in non-admin users -->
     <div class="book-btn">
       <a href="booking_page.php?code=<?php echo $bikeCode; ?>">Book Now</a>
+    </div>
+  <?php } elseif ($loggedIn && $isAdmin) { ?>
+    <!-- Button to redirect to admin bookings page for admin users -->
+    <div class="book-btn">
+      <a href="admin/bookings.php">Admin Bookings</a>
     </div>
   <?php } else { ?>
     <!-- Button to redirect to login page for non-logged-in users -->
     <div class="book-btn">
       <a href="login_page.php">Book Now</a>
     </div>
-<?php } ?>
+  <?php } ?>
 </body>
 </html>
