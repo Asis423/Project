@@ -145,6 +145,7 @@ if (!isset($_SESSION['email'])) {
                     <h2>Specifications of Bikes</h2>
                     <table class="table">
                         <tr>
+                            <th>Code</th>
                             <th>Bike Name</th>
                             <th>Background Image URL</th>
                             <th>Engine</th>
@@ -153,7 +154,7 @@ if (!isset($_SESSION['email'])) {
                             <th>Tires</th>
                             <th>Body Type</th>
                             <th>Price</th>
-                            <th>Code</th>
+                            <th>Qty</th>
                             <th colspan="2">Action</th>
                         </tr>
                         <?php
@@ -171,8 +172,10 @@ if (!isset($_SESSION['email'])) {
                             $bodyType = $row['body_type'];
                             $price = $row['price'];
                             $code = $row['code'];
+                            $qty = $row['qty'];
 
                             echo "<tr>";
+                            echo "<td>$code</td>";
                             echo "<td>$bikeName</td>";
                             echo "<td>$backgroundImageUrl</td>";
                             echo "<td>$engine</td>";
@@ -181,7 +184,7 @@ if (!isset($_SESSION['email'])) {
                             echo "<td>$tires</td>";
                             echo "<td>$bodyType</td>";
                             echo "<td>$price</td>";
-                            echo "<td>$code</td>";
+                            echo "<td>$qty</td>";
 
                             // Add buttons for CRUD operations
                             echo "<td><a href='edit_specs.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";

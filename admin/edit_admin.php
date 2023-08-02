@@ -7,7 +7,7 @@ require_once '../connection/connection.php';
 $id = $_GET['id'];
 
 // Fetch the row's information from the database based on the ID
-$query = "SELECT * FROM admin WHERE id = '$id'";
+$query = "SELECT * FROM users WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 
@@ -17,13 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newUsername = $_POST['username'];
     $newEmail = $_POST['email'];
     $newPassword = $_POST['password'];
+    $newMobileNumber = $_POST['mobile_number'];
 
     // Validate the password field
     if (empty($newPassword)) {
         echo '<script>alert("Password field cannot be empty.");</script>';
     } else {
         // Update the corresponding row in the database
-        $updateQuery = "UPDATE admin SET username = '$newUsername', email = '$newEmail', password = '$newPassword' WHERE id = '$id'";
+        $updateQuery = "UPDATE users SET username = '$newUsername', email = '$newEmail', password = '$newPassword', mobile_number = '$newMobileNumber' WHERE id = '$id'";
         mysqli_query($conn, $updateQuery);
 
         // Show confirmation prompt to the admin
@@ -92,6 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" value="<?php echo $row['password']; ?>" required>
+
+        <label for="mobile_number">Password:</label>
+        <input type="text" id="mobile_number" name="mobile_number" value="<?php echo $row['mobile_number']; ?>" required>
         
         <input type="submit" value="Update">
     </form>

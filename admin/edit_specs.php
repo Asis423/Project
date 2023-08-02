@@ -25,6 +25,7 @@
             $bikeBodyType = $row['body_type'];
             $bikePrice = $row['price'];
             $bikeCode = $row['code'];
+            $bikeQty = $row['qty'];
 
             // Process the form submission
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -39,6 +40,7 @@
                 $bikeBodyType = $_POST['body_type'];
                 $bikePrice = $_POST['price'];
                 $bikeCode = $_POST['code'];
+                $bikeQty = $_POST['qty'];
 
                 // Validate the bike price
                 if ($bikePrice <= 0 || $bikePrice > 99999999) {
@@ -59,7 +61,7 @@
                             // Move the uploaded image to the target directory
                             if (move_uploaded_file($_FILES['bike_image']['tmp_name'], $targetFile)) {
                                 // Update the corresponding row in the database
-                                $updateQuery = "UPDATE specifications SET bike_name = '$bikeName', engine = '$bikeEngine', mileage = '$bikeMileage', peak_power = '$bikePeakPower', torque = '$bikeTorque', brakes = '$bikeBrakes', tires = '$bikeTires', body_type = '$bikeBodyType', price = '$bikePrice', code = '$bikeCode', background_image_url = '$targetFile' WHERE id = '$id'";
+                                $updateQuery = "UPDATE specifications SET bike_name = '$bikeName', engine = '$bikeEngine', mileage = '$bikeMileage', peak_power = '$bikePeakPower', torque = '$bikeTorque', brakes = '$bikeBrakes', tires = '$bikeTires', body_type = '$bikeBodyType', price = '$bikePrice', qty = '$bikeQty', code = '$bikeCode', background_image_url = '$targetFile' WHERE id = '$id'";
                                 mysqli_query($conn, $updateQuery);
 
                                 // Show confirmation prompt to the admin
@@ -195,6 +197,10 @@
             <div class="form-group">
                 <label for="price">Price:</label>
                 <input type="number" id="price" name="price" value="<?php echo $bikePrice; ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="qty">Qty:</label>
+                <input type="number" id="qty" name="qty" value="<?php echo $bikeQty; ?>" required>
             </div>
             <div class="form-group">
                 <label for="bike_image">Upload Image:</label>

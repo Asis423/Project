@@ -6,14 +6,14 @@
     } else {
         include "../connection/connection.php";
         
-        // Count the number of users
-        $query = "SELECT COUNT(*) AS user_count FROM users";
+       // Count the number of users
+        $query = "SELECT COUNT(*) AS user_count FROM users WHERE role='user'";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
         $userCount = $row['user_count'];
 
         // Count the number of admins
-        $query = "SELECT COUNT(*) AS admin_count FROM admin";
+        $query = "SELECT COUNT(*) AS admin_count FROM users WHERE role='admin'";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
         $adminCount = $row['admin_count'];
@@ -155,6 +155,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Password</th>
+                                <th>Mobile Number</th>
                                 <th>Action</th>
                                 <th>Action</th>
                                 <!-- Add more columns as per your admin table structure -->
@@ -163,7 +164,7 @@
                         <tbody>
                             <?php
                             // Query to retrieve admin information
-                            $query = "SELECT * FROM admin";
+                            $query = "SELECT * FROM users WHERE role='admin'";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -172,6 +173,7 @@
                                 echo "<td>" . $row['username'] . "</td>";
                                 echo "<td>" . $row['email'] . "</td>";
                                 echo "<td>" . $row['password'] . "</td>";
+                                echo "<td>" . $row['mobile_number'] . "</td>";
                                 // Add more columns as per your admin table structure
                             
                                 // Add buttons for CRUD operations

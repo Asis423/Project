@@ -28,6 +28,7 @@
     $bikeTires = $row['tires'];
     $bikeBodyType = $row['body_type'];
     $bikePrice = $row['price'];
+    $bikeQty = $row['qty'];
   } else {
     // If no rows are returned, display an error message or handle the case accordingly
     echo "No specifications found for the given bike code.";
@@ -101,6 +102,10 @@
         <tr>
           <th>Body Type</th>
           <td><?php echo $bikeBodyType; ?></td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td><?php echo $bikeQty; ?></td>
         </tr>
       </table>
     </div>

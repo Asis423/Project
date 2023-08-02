@@ -25,13 +25,13 @@
                     <input type="password" name="password" required>
                     <label for="">Password</label>
                 </div>
-                <div class="role-selection">
+                <!-- <div class="role-selection">
                     <label for="role">Select Role:</label>
                     <select name="role" id="role">
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="remember-password">
                     <label for=""><input type="checkbox" name="" id="">Remember Me</label>
                     <a href="#">Forgot Password?</a>

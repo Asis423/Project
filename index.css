@@ -469,13 +469,13 @@ header.hide {
     border: 0;
     cursor: pointer;
     color: white;
-    background-color: #F85151;
+    background-color: #ffaa00;
     font-weight: 900;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif'
 }
 
 .row1 .send_btn:hover {
-    background-color: #7CB9E8;
+    background-color: rgb(215, 125, 0);
     transition: .3s;
 }
 .row1 form p{

@@ -39,7 +39,7 @@
         <h1>LET'S HAVE<br>A RIDE</h1>
         <p>Providing the Quality and Luxurious Lifestyle.</p>
         <!-- Home button -->
-        <a href="signup_page.php" class="btn">Book Now</a>
+        <a href="#gallery" class="btn">Book Now</a>
       </div>
     </div>
   </div>

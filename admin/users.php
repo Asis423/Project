@@ -158,7 +158,7 @@
                         <tbody>
                             <?php
                             // Query to retrieve admin information
-                            $query = "SELECT * FROM users";
+                            $query = "SELECT * FROM users WHERE role = 'user'";
                             $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
