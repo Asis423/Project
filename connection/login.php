@@ -60,6 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $error . "<br>";
         }
         echo '<script>alert("Invalid email or password");</script>';
+        // Redirect back to login page
+        echo '<script>window.location.href = "../login_page.php";</script>';
+        exit();
     }
 }
 

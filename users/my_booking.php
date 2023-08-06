@@ -72,7 +72,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -153,10 +153,21 @@
                                         echo "<td>" . $startDate . "</td>";
                                         echo "<td>" . $endDate . "</td>";
                                         echo "<td>" . $bookingStatus . "</td>";
-                                        echo "<td><a href='edit_booking.php?id=" . $bookingId . "'><button class='button-edit'>Edit</button></a></td>";
+                                        // echo "<td><a href='edit_booking.php?id=" . $bookingId . "'><button class='button-edit'>Edit</button></a></td>";
                                         echo "<td><a href='delete_booking.php?id=" . $bookingId . "'><button class='button-delete'>Delete</button></a></td>";
 
                                         echo "</tr>";
+
+                                        // Check if the bike associated with the booking is out of stock
+                                        $bikeCode = $row['bike_code'];
+                                        $checkQtyQuery = "SELECT qty FROM specifications WHERE code = '$bikeCode'";
+                                        $resultQty = mysqli_query($conn, $checkQtyQuery);
+                                        $rowQty = mysqli_fetch_assoc($resultQty);
+                                        $quantity = $rowQty['qty'];
+
+                                        if ($quantity === 0) {
+                                        $bookingStatus = 'Out of Stock';  // Update the booking status
+                                        }
                                     }
                                 } else {
                                     echo "<tr><td colspan='7'>No booking information found.</td></tr>";

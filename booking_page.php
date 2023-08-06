@@ -24,12 +24,15 @@ if (!isset($_SESSION['email'])) {
         $bikeName = $rowSpecs['bike_name'];
         $bikePrice = $rowSpecs['price'];
 
+         // Set the time zone to Kathmandu (Nepal Standard Time)
+        date_default_timezone_set('Asia/Kathmandu');
+        
         // Get the current date and time
         $currentDateTime = date('Y-m-d H:i:s');
 
         // Calculate the start date and end date
         $startDate = date('Y-m-d');
-        $endDate = date('Y-m-d', strtotime('+15 days'));
+        $endDate = date('Y-m-d', strtotime('+10 days'));
 
         // Set the status as a string 'pending'
         $status = 'pending';

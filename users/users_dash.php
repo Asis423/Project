@@ -65,7 +65,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>

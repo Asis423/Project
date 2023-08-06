@@ -90,7 +90,7 @@ if (!isset($_SESSION['email'])) {
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -142,7 +142,7 @@ if (!isset($_SESSION['email'])) {
                 </ul>
 
                 <section class="admin-table">
-                    <h2>Specifications of Bikes</h2>
+                    <h2>Bike Bookings</h2>
                     <table class="table">
                         <tr>
                             <th>Booking Id</th>
@@ -154,7 +154,7 @@ if (!isset($_SESSION['email'])) {
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Status</th>
-                            <th colspan="2">Action</th>
+                            <th colspan="4">Action</th>
                         </tr>
                         <?php
                             // Fetch bookings data from the database
@@ -184,8 +184,11 @@ if (!isset($_SESSION['email'])) {
                                 echo "<td>$bookingStatus</td>";
 
                                 // Add buttons for CRUD operations
-                                echo "<td><a href='edit_booking.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
-                                echo "<td><a href='delete_booking.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                                // echo "<td><a href='edit_booking.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
+                                echo "<td><a href='booking_approve.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to approve this booking?')\"><button class='button-approve'>Approve</button></a></td>";
+                                echo "<td><a href='booking_stock.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to change status into out of stock?')\"><button class='button-stock'>Out of Stock</button></a></td>";
+                                echo "<td><a href='booking_reject.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to reject this booking?')\"><button class='button-reject'>Reject</button></a></td>";
+                                echo "<td><a href='booking_delete.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to delete this booking?')\"><button class='button-delete'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                         ?>
@@ -193,9 +196,9 @@ if (!isset($_SESSION['email'])) {
                 </table>
 
                 <!-- Add the Create button -->
-                <div class="create-button">
+                <!-- <div class="create-button">
                     <button onclick="location.href='create_specs.php'" class="button-create">Create</button>
-                </div>
+                </div> -->
 
             </section>
         </section>
@@ -203,3 +206,5 @@ if (!isset($_SESSION['email'])) {
 </div>
 </body>
 </html>
+
+

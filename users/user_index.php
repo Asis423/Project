@@ -28,7 +28,7 @@
             <div class="dropdown-content">
                 <a href="users_dash.php">My Profile</a>
                 <a href="my_booking.php">My Bookings</a>
-                <a href="../connection/logout.php">Logout</a>
+                <a href="../connection/logout.php" onclick="return confirm('Are you sure you want to log out?')">Logout</a>
             </div>
             </div>
         </nav>

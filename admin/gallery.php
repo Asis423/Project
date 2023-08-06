@@ -90,7 +90,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -172,8 +172,8 @@
                                 // Add more columns as per your admin table structure
                             
                                 // Add buttons for CRUD operations
-                                echo "<td><a href='edit_gallery.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
-                                echo "<td><a href='delete_gallery.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                                echo "<td><a href='gallery_edit.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
+                                echo "<td><a href='gallery_delete.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -182,7 +182,7 @@
 
                     <!-- Add the Create button -->
                     <div class="create-button">
-                        <button onclick="location.href='create_gallery.php'" class="button-create">Create</button>
+                        <button onclick="location.href='gallery_create.php'" class="button-create">Create</button>
                     </div>
 
                 </section>

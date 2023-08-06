@@ -96,7 +96,7 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -177,8 +177,8 @@
                                 // Add more columns as per your admin table structure
                             
                                 // Add buttons for CRUD operations
-                                echo "<td><a href='edit_admin.php?id=" . $row['id'] . "'><button class='button-edit'>Edit</button></a></td>";
-                                echo "<td><a href='delete_admin.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                                echo "<td><a href='admin_edit.php?id=" . $row['id'] . "' onclick=\"return confirm('Do you want to edit the admin information?')\"><button class='button-edit'>Edit</button></a></td>";
+                                echo "<td><a href='admin_dash.php?id=" . $row['id'] . "' onclick=\"return alert('You cannot delete the admin information!!!')\"><button class='button-delete'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                             ?>

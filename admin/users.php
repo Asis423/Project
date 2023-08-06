@@ -90,7 +90,7 @@
             </ul>
             <ul class="side-menu">
                 <li>
-                    <a href="../connection/logout.php" class="logout">
+                    <a href="../connection/logout.php" class="logout" onclick="return confirm('Are you sure you want to log out?')">
                         <i class='bx bxs-log-out-circle'></i>
                         <span class="text">Logout</span>
                     </a>
@@ -150,7 +150,7 @@
                                 <th>Mobile No.</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>Action</th>
+                                <!-- <th>Action</th> -->
                                 <!-- <th>Action</th> -->
                                 <!-- Add more columns as per your admin table structure -->
                             </tr>
@@ -171,8 +171,8 @@
                                 // Add more columns as per your admin table structure
                             
                                 // Add buttons for CRUD operations
-                                echo "<td><a href='update_users.php?id=" . $row['id'] . "'><button class='button-update'>Update</button></a></td>";
-                                //echo "<td><a href='delete_users.php?id=" . $row['id'] . "'><button class='button-delete'>Delete</button></a></td>";
+                                // echo "<td><a href='update_users.php?id=" . $row['id'] . "'><button class='button-update'>Update</button></a></td>";
+                                // echo "<td><a href='users.php?id=" . $row['id'] . "' onclick=\"return alert('You cannot delete the user information!!!')\"><button class='button-delete'>Delete</button></a></td>";
                                 echo "</tr>";
                             }
                             ?>

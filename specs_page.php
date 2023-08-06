@@ -37,8 +37,20 @@
   // Check if the user is logged in
   $loggedIn = isset($_SESSION['email']);
 
-  // Check if the user is an admin
+  // Check if the admin is logged in
   $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+
+  // Check if the quantity of the bike becomes zero
+  $checkQtyQuery = "SELECT qty FROM specifications WHERE code = '$bikeCode'";
+  $resultQty = mysqli_query($conn, $checkQtyQuery);
+  $rowQty = mysqli_fetch_assoc($resultQty);
+  $quantity = $rowQty['qty'];
+
+  if ($quantity === 0) {
+      // If the quantity becomes zero, update the booking status to 'Out of Stock'
+      $updateBookingStatusQuery = "UPDATE bookings SET status = 'Out of Stock' WHERE id = '$bookingId'";
+      mysqli_query($conn, $updateBookingStatusQuery);
+  }
 
   // Close the database connection
   $conn->close();
@@ -116,7 +128,7 @@
   <?php if ($loggedIn && !$isAdmin) { ?>
     <!-- Button to book the bike for logged-in non-admin users -->
     <div class="book-btn">
-      <a href="booking_page.php?code=<?php echo $bikeCode; ?>">Book Now</a>
+      <a href="booking_page.php?code=<?php echo $bikeCode; ?>" onclick="return confirm('Are you sure you want to book this bike?')">Book Now</a>
     </div>
   <?php } elseif ($loggedIn && $isAdmin) { ?>
     <!-- Button to redirect to admin bookings page for admin users -->
