@@ -6,6 +6,9 @@
     } else {
         include "../connection/connection.php";
         
+        // Retrieve the logged-in user's email
+        $userEmail = $_SESSION['email'];
+
          // Retrieve user ID from the session
         $userEmail = $_SESSION['email'];
         $queryUser = "SELECT id FROM users WHERE email = '$userEmail'";
@@ -13,11 +16,17 @@
         $rowUser = mysqli_fetch_assoc($resultUser);
         $userId = $rowUser['id'];
 
-        // Query to get the user booking count
-        $query = "SELECT COUNT(*) as my_booking FROM bookings";
+        // Query to get the tuser booking count
+        $query = "SELECT COUNT(*) as user_my_booking_count FROM bookings 
+                  WHERE user_id = (SELECT id FROM users WHERE email = '$userEmail')";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
-        $bookingCount = $row['my_booking'];
+        $userMyBookingCount = $row['user_my_booking_count'];
+
+        // If no bookings found, set the count to 0
+        if ($userMyBookingCount === null) {
+            $userMyBookingCount = 0;
+        }
 
         // Count the number of bikes on gallery
         $query = "SELECT COUNT(*) AS bike_count FROM gallery";
@@ -101,7 +110,7 @@
                     <li>
                         <i class='bx bx-calendar bx-icon'></i>
                         <span class="text">
-                            <!-- <h3><?php echo $bookingCount; ?></h3> -->
+                            <h3><?php echo $userMyBookingCount; ?></h3>
                             <p>My<br>Bookings</p>
                         </span>
                     </li>

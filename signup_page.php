@@ -78,26 +78,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Perform additional validation checks for username
     if (strlen($username) < 4 || strlen($username) > 20) {
-        echo "Username should be between 3 and 20 characters";
+        $errors[] = "Username should be between 3 and 20 characters";
         // You can redirect the user back to the signup form or handle the error accordingly
-        exit;
+        // exit;
     }
 
     // Perform additional validation checks for mobile number
     if (!preg_match('/^\d{10}$/', $mobileNumber)) {
-        echo "Invalid mobile number";
+        $errors[] = "Invalid mobile number";
         // You can redirect the user back to the signup form or handle the error accordingly
-        exit;
+        // exit;
     }
 
-    if (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
-        echo "Username can only contain letters, numbers, and underscores";
+    if (!preg_match('/[a-z][A-Z]/', $username)) {
+        $errors[] = "Username can only contain letters";
         // You can redirect the user back to the signup form or handle the error accordingly
-        exit;
+        // exit;
     }
 
     // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //     echo "Invalid email address";
+    //     $errors[] = "Invalid email address";
     //     // You can redirect the user back to the signup form or handle the error accordingly
     //     exit;
     // }
