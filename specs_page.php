@@ -128,7 +128,8 @@
   <?php if ($loggedIn && !$isAdmin) { ?>
     <!-- Button to book the bike for logged-in non-admin users -->
     <div class="book-btn">
-      <a href="booking_page.php?code=<?php echo $bikeCode; ?>" onclick="return confirm('Are you sure you want to book this bike?')">Book Now</a>
+      
+      <a href="esewa/epay.php?code=<?php echo $bikeCode; ?>" onclick="return confirm('Are you sure you want to book this bike?')">Book Now</a>
     </div>
   <?php } elseif ($loggedIn && $isAdmin) { ?>
     <!-- Button to redirect to admin bookings page for admin users -->

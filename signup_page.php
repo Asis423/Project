@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // exit;
     }
 
-    if (!preg_match('/[a-z][A-Z]/', $username)) {
+    if (!preg_match('/^[a-zA-Z ]+$/', $username)) {
         $errors[] = "Username can only contain letters";
         // You can redirect the user back to the signup form or handle the error accordingly
         // exit;

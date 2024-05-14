@@ -71,6 +71,12 @@
                         <span class="text">My Bookings</span>
                     </a>
                 </li>
+                <li>
+                    <a href="payment.php">
+                        <i class='bx bxs-calendar-alt'></i>
+                        <span class="text">My Payments</span>
+                    </a>
+                </li>
             </ul>
             <ul class="side-menu">
                 <li>

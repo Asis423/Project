@@ -18,7 +18,7 @@
         $data[] = "No bike data available";
     }
 
-    // Close the database connection
+    // Close the database connections
     $conn->close();
 
     // Return the bike data as JSON
